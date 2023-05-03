@@ -2,27 +2,19 @@
 #include <unistd.h>
 #include <ctype.h>
 
-int	ft_toupper(int str)
-
+int	ft_toupper(char str)
 {
-  printf("valor de str %c",str);
-write(1,&str,1);
-  
-  int b = 0;
-  if (str >= 'a' && str <= 'z') {
-    b = str + 32;
-    printf("valor de b %c",b);
-    return str + 32; 
-  }
-    printf("hola");
-  return str;
+  return (str -  32) ;
+   
 }
 
-int main ()
-{
-  char a = 'a';
-  printf("%c --> %c\n",a,toupper(a));
-  char b = 'a';
-  printf("%c --> %c\n",b , ft_toupper(b));
-
-}
+//int main ()
+//{
+//  //char a = 'a';
+//  //printf("%c --> %c\n",a,toupper(a));
+//  //char b = 'a';
+//  //printf("%c --> %c\n",b , ft_toupper(b));
+//  printf("\nvalor del original upper %c\n",toupper(97));
+//
+//  printf("\npokemon %c\n", ft_toupper('y'));
+//}
