@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 10:48:25 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/04 15:36:39 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/04 15:07:14 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/04 15:29:29 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef libft
+#define libft
 
-#include <stdio.h>
-#include <ctype.h>
-#include <unistd.h>
-#include "libft.h"
+#include  <unistd.h>
 
-int	ft_toupper(int chr)
-{
-	if (chr >= 'A' && chr <= 'Z')
-	{
-		chr += 32;
-	}
-	return (chr);
-  
-  
-}
-int main ()
-{
-int i;
-	i = 'a';
-    while (i <= 'z')
-    {
-        c = ft_toupper(i);
-        write(1, &c, 1);
-        i++;
-    }
-}
+
+int	ft_toupper(int chr);
+
+
+
+char	*ft_strchr(char *str , int charac);
+
+int	ft_isalnum(int a);
+
+
+
+int	ft_isalpha(int a);
+
+
+int ft_isdigit(int a);
+
+
+int	ft_isascii(int a);
+#endif

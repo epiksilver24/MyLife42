@@ -9,7 +9,6 @@ int	ft_isascii(int a)
   }else 
     return 0;
 }
-int main ()
 //{
 ////  char a = ft_isalpha(';');
 ////  write(1,&a,1);

@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 10:48:25 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/04 15:36:39 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/04 10:54:23 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/04 11:25:23 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdio.h>
-#include <ctype.h>
 #include <unistd.h>
-#include "libft.h"
+#include <string.h>
 
-int	ft_toupper(int chr)
+char	*ft_strchr(char *str , int charac)
 {
-	if (chr >= 'A' && chr <= 'Z')
+	int count;
+
+	count = 0;
+
+	while (str[count] != '\0' && str[count] != charac)
 	{
-		chr += 32;
+		count++;
 	}
-	return (chr);
-  
-  
+	return (&str[count]);
 }
-int main ()
-{
-int i;
-	i = 'a';
-    while (i <= 'z')
-    {
-        c = ft_toupper(i);
-        write(1, &c, 1);
-        i++;
-    }
-}
+
+//int main()
+//{
+//	char a[] = "pokemon";
+//
+//
+//	printf("string desde puntero %s",ft_strchr(a,'o'));
+//	char b[] = "pokemon";
+//
+//	printf("\nfuncion original %s\n",strchr(b,'o'));
+//
+//}
