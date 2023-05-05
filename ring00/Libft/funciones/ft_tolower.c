@@ -1,20 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/05 10:33:34 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/05 10:34:28 by scespede         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include <stdio.h>
-#include <unistd.h>
 #include <ctype.h>
+#include <unistd.h>
+#include "libft.h"
 
-int	ft_toupper(char str)
+int	ft_tolower(int chr)
 {
-  return (str -  32) ;
-   
+	if (chr >= 'A' && chr <= 'Z')
+	{
+		chr += 32;
+	}
+	return (chr);
+  
+  
 }
-
+//
 //int main ()
 //{
-//  //char a = 'a';
-//  //printf("%c --> %c\n",a,toupper(a));
-//  //char b = 'a';
-//  //printf("%c --> %c\n",b , ft_toupper(b));
-//  printf("\nvalor del original upper %c\n",toupper(97));
+//char c ;
+//int i;
+//	i = 'a';
+//    while (i <= 'z')
+//    {
+//        c = ft_toupper(i);
+//        write(1, &c, 1);
+//        i++;
+//    }
+//	printf("\npatron original\n");
 //
-//  printf("\npokemon %c\n", ft_toupper('y'));
+//char u ;
+//int t;
+//t = 'a';
+//while (t <= 'z')
+//{
+//	u = toupper(t);
+//	write(1,&u,1);
+//	t++;
+//}
+//
 //}

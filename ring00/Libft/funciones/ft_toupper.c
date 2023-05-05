@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 10:48:25 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/04 15:36:39 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/05 10:21:22 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,36 @@
 
 int	ft_toupper(int chr)
 {
-	if (chr >= 'A' && chr <= 'Z')
+	if (chr >= 'a' && chr <= 'z')
 	{
-		chr += 32;
+		chr -= 32;
 	}
 	return (chr);
   
   
 }
-int main ()
-{
-int i;
-	i = 'a';
-    while (i <= 'z')
-    {
-        c = ft_toupper(i);
-        write(1, &c, 1);
-        i++;
-    }
-}
+//
+//int main ()
+//{
+//char c ;
+//int i;
+//	i = 'a';
+//    while (i <= 'z')
+//    {
+//        c = ft_toupper(i);
+//        write(1, &c, 1);
+//        i++;
+//    }
+//	printf("\npatron original\n");
+//
+//char u ;
+//int t;
+//t = 'a';
+//while (t <= 'z')
+//{
+//	u = toupper(t);
+//	write(1,&u,1);
+//	t++;
+//}
+//
+//}

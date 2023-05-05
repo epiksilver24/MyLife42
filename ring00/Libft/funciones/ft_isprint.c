@@ -1,40 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   isprint.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/05 10:24:12 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/05 10:31:09 by scespede         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include <unistd.h>
 #include <stdio.h>
 #include <ctype.h>
+#include "libft.h"
+
 
 int	ft_isprint(int a)
 {
-  if (a > 31 && a < 127) {
+  if ((a >= 32 && a <= 126) ) {
     return 1;
-  }
-  else 
+  }else 
     return 0;
 }
-
-int	main ()
+/*
+int main ()
 {
- // int a = 1;
- // while (a <= 127) {
- //   if (isprint(a)!= 0) {
- //   printf("valor de %d , carcter %c\n",a,a);
- //   }
- //   a++;
-  
- // }
- 
-  printf("valor de ft_isprint %d\n", ft_isprint(33));
-  printf("valor de ft_isprint %d\n", ft_isprint(77));
-  printf("valor de ft_isprint %d\n", ft_isprint(84));
-  printf("valor de ft_isprint %d\n", ft_isprint(127));
- 
-  printf("original funcion\n");
-  printf("valor de la orginal %d\n", isprint(33));
-  printf("valor de la orginal %d\n", isprint(77));
-  printf("valor de la orginal %d\n", isprint(84));
-  printf("valor de la orginal %d\n", isprint(127));
- 
+	char a ;
+
+	a = 62;
+
+printf("es pimible : %d" ,ft_isprint('~') );
+	
 }
-//{
-////  char a = ft_isalpha(';');
-////  write(1,&a,1);
-////}
+*/
