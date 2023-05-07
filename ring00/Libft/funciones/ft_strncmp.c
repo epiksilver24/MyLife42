@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 13:45:27 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/07 15:39:39 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:14:24 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,4 @@ int main ()
   char	b[] = "tests";
   printf("mi funcionsadas\nnum= %d",ft_strncmp(a, b, 6) );
 }
-
 */
