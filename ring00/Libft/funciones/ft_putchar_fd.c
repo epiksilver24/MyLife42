@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 10:54:23 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/07 01:48:42 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/07 02:16:38 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/07 02:29:40 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strchr(const char *str , int charac)
+#include <stdio.h>
+int ft_putchar_fd(int c, int fd)
 {
-	// retorna el puntero a el caracter de \0
-	  if (!str) {
-	  return (NULL); 
-	  }
+  if (ft_isascii(c)) {
+  write(fd,&c,1);
+ return (1); 
+  }
+return (0);
 
-	while (*str && *str != (char)charac)
-	{
-	  str++;
-	}
-	if (*str == (char) charac)
-			return ((char *) str);
-	
-
-      
-
-	return (NULL);
 }
-//
+
 //int main ()
 //{
-//	char a[] = "pokemon";
-//
-//	
-//	printf("valor de a %s",ft_strchr(a,107));
+//  printf("\ncuanto vale lo que le paso = %d\n",ft_putchar_fd(112,3));
 //}

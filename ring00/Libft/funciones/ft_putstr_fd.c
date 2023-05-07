@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 10:54:23 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/07 01:48:42 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/07 02:35:06 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/07 02:46:30 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strchr(const char *str , int charac)
+#include <stddef.h>
+int ft_putstr_fd(const char *str, int fd)
 {
-	// retorna el puntero a el caracter de \0
-	  if (!str) {
-	  return (NULL); 
-	  }
 
-	while (*str && *str != (char)charac)
-	{
-	  str++;
-	}
-	if (*str == (char) charac)
-			return ((char *) str);
-	
+  size_t i;
 
-      
+  i = 0;
 
-	return (NULL);
+  while (str[i] && ft_putchar_fd(str[i], fd)) {
+ i++; 
+  }
+  if (!str) {
+  return (1);
+  }
+  return (0);
+
 }
-//
-//int main ()
-//{
-//	char a[] = "pokemon";
-//
-//	
-//	printf("valor de a %s",ft_strchr(a,107));
+
+
+
+
+//int main() {
+//    const char* str = "Hola, mundo!";
+//    int fd = 1; // Salida estándar (stdout)
+//    ft_putstr_fd(str, fd);
+//    return 0;
 //}

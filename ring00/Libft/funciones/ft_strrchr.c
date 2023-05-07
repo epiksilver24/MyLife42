@@ -1,41 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 10:54:23 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/07 01:48:42 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/07 02:08:12 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
+#include <stdio.h>
 
-char	*ft_strchr(const char *str , int charac)
+char	*ft_strrchr(const char *str , int c)
 {
-	// retorna el puntero a el caracter de \0
-	  if (!str) {
-	  return (NULL); 
-	  }
+  char *ptr;
 
-	while (*str && *str != (char)charac)
-	{
-	  str++;
-	}
-	if (*str == (char) charac)
-			return ((char *) str);
-	
+  ptr = NULL;
 
-      
+ptr = 0;
+  if (!str) {
+  return (NULL);
+  }
+  size_t count;
 
-	return (NULL);
+  count = 0;
+  while (str[count] != '\0') {
+      if (str[count] == (char )c) {
+	  ptr = (char *) str; 
+      } 
+      str++;
+  }
+  if (str[count] == (char)c) {
+    return (char *)&str[count]; 
+  }
+
+  return ptr;
+
+  
 }
 //
 //int main ()
 //{
-//	char a[] = "pokemon";
-//
-//	
-//	printf("valor de a %s",ft_strchr(a,107));
+//  char a [] = "periscopio";
+//  printf("farase a devolver %s",ft_strrchr(a, 	112));
 //}
