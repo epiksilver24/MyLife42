@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:07:14 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/07 13:58:26 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/08 12:42:21 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,16 @@ int ft_putstr_fd(const char *str, int fd);
 int ft_putnbr_fd(int num, int fd);
 
 void ft_putendl_fd(char *str, int fd);
+
+int ft_atoi(const char *str);
+
+void ft_bzero(void *s, size_t n);
+
+void *ft_memset(void *b, int c , size_t len);
+
+void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
+
+void *ft_memmove(void dst, const void  src, size_t n);
+
+
 #endif
