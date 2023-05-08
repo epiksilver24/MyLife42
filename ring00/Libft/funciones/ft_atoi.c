@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 12:28:15 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/08 11:05:45 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/08 13:26:04 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,13 @@ int	ft_atoi(char *str)
 	num = 0;
 	count = 0;
 	while ((str[count] >= 9 && str[count] <= 13) || str[count] == ' ')
-	{
 		count++;
-	}
-	
 	if (str[count] == '-')
 	{
 		count++;
-			resta++;
-	}else if (str[count]== '+')
+		resta++;
+	}
+	else if (str[count] == '+')
 		count++;
 	while (str[count] && str[count] >= '0' && str[count] <= '9')
 	{

@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 13:45:27 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/08 11:57:17 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/08 13:48:26 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
  
  if (!(round == n)) 
   num += ((unsigned char ) s1[count]  - (unsigned char )  s2[count]); 
-  return num;
+  
+ return num;
   
 }
 
