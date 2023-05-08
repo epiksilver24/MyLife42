@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 10:54:23 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/07 20:25:12 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:23:08 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 char	*ft_strchr(const char *str , int charac)
 {
 	// retorna el puntero a el caracter de \0
-	  if (!str ) {
-	  return (0); 
-	  }
-
+//	  if (!str ) {
+//	  return (0); 
+//	  }
+//
 	while (*str )
 	{
 	  if (*str == (char) charac) {

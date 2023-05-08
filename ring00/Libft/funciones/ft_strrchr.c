@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 10:54:23 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/07 02:08:12 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:25:22 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ char	*ft_strrchr(const char *str , int c)
   ptr = NULL;
 
 ptr = 0;
-  if (!str) {
-  return (NULL);
-  }
+//  if (!str) {
+//  return (NULL);
+//  }
   size_t count;
 
   count = 0;

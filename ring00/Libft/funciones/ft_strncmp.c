@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 13:45:27 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/07 20:14:24 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/08 10:26:45 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,18 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 
   num = 0;
   count = 0;
-  if ((s1[count] == '\0' && s2[count] == '\0') || n == 0) {
+  if ( (s1[count] == '\0' && s2[count] == '\0') || n == 0) {
  //printf("prmirer if\n");
   return (0);
   }
   
   while (s1[count] != '\0' && s2[count] != '\0' && round < n) {
-      num += (s1[count] - s2[count]); 
+   
+      
+    num += (s1[count] - s2[count]); 
       count++;
       round++;
-  }
+      }
  
   
   num += (s1[count] - s2[count]); 
