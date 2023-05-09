@@ -6,22 +6,19 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 11:58:55 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/08 12:05:12 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/09 18:09:42 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	char *str;
-	size_t count;
+	char	*str;
 
 	str = s;
-	count = 0;
-	while (str[count] && count < n)
+	while (n-- > 0)
 	{
-		str[count] = '\0';
-		count++;
+		*str++ = '\0';
 	}
 }

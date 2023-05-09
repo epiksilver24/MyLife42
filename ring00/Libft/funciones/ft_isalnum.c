@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 11:11:39 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/06 11:13:26 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/09 18:16:50 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	ft_isalnum(int a)
 {
-  if	(((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z')) || (a >= '0' && a <= '9')){
-    return (1);
-  }
-  else 
-    return (0);
+	if (((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z')) || \
+		(a >= '0' && a <= '9'))
+		return (1);
+	else
+		return (0);
 }
 //int main ()
 //{

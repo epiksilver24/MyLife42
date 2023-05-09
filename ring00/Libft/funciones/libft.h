@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:07:14 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/08 13:47:01 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/09 16:23:20 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,11 @@ void ft_bzero(void *s, size_t n);
 
 void *ft_memset(void *b, int c , size_t len);
 
-//void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
+void *ft_memcpy(void *dst, const void *src, size_t n);
 
-// void *ft_memmove(void dst, const void  src, size_t n);
+void *ft_memmove(void *dst, const void  *src, size_t n);
 
+void *ft_memchr(const void *s, int c, size_t n);
 
+void *ft_memcmp(const void *s1, const void *s2, size_t n);
 #endif
