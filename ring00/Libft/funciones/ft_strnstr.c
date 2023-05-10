@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 11:41:59 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/10 11:49:07 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:42:24 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,36 @@
 
 char 	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int		num;
-	size_t	count;
-	size_t	round;
+	char	*str;
+	char	*ned;
+	size_t count;
+	size_t position;
 
-	round = 0;
-	num = 0;
+	position =0;
 	count = 0;
-	while (len-- > 0)
+	str = (char *) haystack;
+	ned = (char *) needle;
+	while (str[count] && count < len)
 	{
-		if (haystack == (char *) needle)
-			return (char *)haystack;
-		haystack++;
+		position = 0;
+		if(str[count] == ned[position])
+		{
+			while (str[count + position] == ned[position])
+			{
+				if (ned[position] != '\0')
+					return &str[count + position];
+				position++;
+			}
+		}	
+		count++;
 	}
 	return ((char *)haystack);
 }
-//int main ()
-//{
-//  char  a[] = "abcdef";
-//  char	b[] = "abc/376xx";
-//  printf("mi funcionsadas\nnum= %d",ft_strncmp(a, b, 5) );
-//
-//  char  c[] = "abcdef";
-//  char	d[] = "abc/375xx";
-//  printf("\nmi funcionsadas\nnum= %d\tnum = %d",strncmp(c, d, 5) );
-//
-//}
+int main ()
+{
+  char  a[] = "lorem impsum dolor sit amet";
+  char	b[] = "impsum";
+  printf("mi funcionsadas\nnum= %s", ft_strnstr(a,b,15) );
+
+
+}
