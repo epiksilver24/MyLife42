@@ -6,34 +6,23 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 10:54:23 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/08 10:23:08 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/10 01:13:13 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str , int charac)
+char	*ft_strchr(const char *str, int charac)
 {
-	// retorna el puntero a el caracter de \0
-//	  if (!str ) {
-//	  return (0); 
-//	  }
-//
-	while (*str )
+	while (*str)
 	{
-	  if (*str == (char) charac) {
-	      return ((char *)str);
-	  }
-	  str++;
+		if (*str == (char) charac)
+			return ((char *)str);
+		str++;
 	}
 	if (*str == (char) charac)
-			return ((char *) str);
-	
-
-      
-
+		return ((char *) str);
 	return (0);
-	
 }
 //
 //int main ()

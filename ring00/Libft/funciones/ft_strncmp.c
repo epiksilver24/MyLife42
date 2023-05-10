@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 13:45:27 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/08 13:48:26 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/10 09:19:47 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,29 @@
 #include <stdio.h>
 #include <string.h>
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-  int  num;
-  size_t	count;
-  size_t round;
+	int		num;
+	size_t	count;
+	size_t	round;
 
-  round = 0;
-
-  num = 0;
-  count = 0;
-  if ( (s1[count] == '\0' && s2[count] == '\0') || n == 0) {
-  return (0);
-  }
-  
-  while (s1[count] != '\0' && s2[count] != '\0' && round < n) {
-    if (s1[count] != s2[count])
+	round = 0;
+	num = 0;
+	count = 0;
+	if ((s1[count] == '\0' && s2[count] == '\0') || n == 0)
+		return (0);
+	while (s1[count] != '\0' && s2[count] != '\0' && round < n)
 	{
-	   return ((unsigned char) s1[count] - (unsigned char) s2[count]);	
+		if (s1[count] != s2[count])
+			return ((unsigned char) s1[count] - (unsigned char) s2[count]);
+		num += (s1[count] - s2[count]);
+		count++;
+		round++;
 	}
-		num += (s1[count] - s2[count]); 
-      count++;
-      round++;
-      }
- 
- if (!(round == n)) 
-  num += ((unsigned char ) s1[count]  - (unsigned char )  s2[count]); 
-  
- return num;
-  
+	if (!(round == n))
+		num += ((unsigned char) s1[count] - (unsigned char) s2[count]);
+	return (num);
 }
-
 //int main ()
 //{
 //  char  a[] = "abcdef";

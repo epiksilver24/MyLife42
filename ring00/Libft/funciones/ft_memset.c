@@ -6,17 +6,17 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:07:32 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/08 12:29:54 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/10 01:17:29 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-void *ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	char *str;
-	size_t count;
+	char	*str;
+	size_t	count;
 
 	count = 0;
 	str = b;
@@ -25,7 +25,7 @@ void *ft_memset(void *b, int c, size_t len)
 		str[count] = (unsigned char) c;
 		count++;
 	}
-	return str;
+	return (str);
 }
 /*
 int main ()

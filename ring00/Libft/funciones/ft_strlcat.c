@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 13:35:29 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/06 23:02:48 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/10 01:28:06 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,27 @@
 #include <stddef.h>
 #include <stdio.h>
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-  size_t destLeng;
-  size_t srcLeng;
-  size_t counter;
+	size_t	destleng;
+	size_t	srcleng;
+	size_t	counter;
 
-  counter = 0;
-  destLeng = ft_strlen(dst);
-  srcLeng = ft_strlen(src);
-  if (!size) {
-    return (srcLeng);
-  }
-  while (src[counter] && destLeng + counter < size - 1) {
-      dst[destLeng + counter] = src[counter];
-      counter++;
-  }
-  dst[destLeng + counter] = '\0';
-  
-  if (destLeng > size) {
-      return (srcLeng + size);
-  }
-
-  return (destLeng + srcLeng);
+	counter = 0;
+	destleng = ft_strlen(dst);
+	srcleng = ft_strlen(src);
+	if (!size)
+		return (srcleng);
+	while (src[counter] && destleng + counter < size - 1)
+	{
+		dst[destleng + counter] = src[counter];
+		counter++;
+	}
+	dst[destleng + counter] = '\0';
+	if (destleng > size)
+		return (srcleng + size);
+	return (destleng + srcleng);
 }
-
-
 //
 //int main ()
 //{
@@ -47,6 +42,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 //  char f2[] = "diamante";
 //  size_t a = 3;
 //
-//  printf("valor de numero %d \t valor de la frase %s",ft_strlcat(f1, f2, a),f1);  
+//  printf("valor de numero %d \t valor de la frase 
+//  %s",ft_strlcat(f1, f2, a),f1);  
 //}
 //
