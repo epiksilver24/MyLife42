@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 11:43:40 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/10 11:43:42 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/10 11:41:59 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/10 11:49:07 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 
 #include "libft.h"
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char 	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	int		num;
 	size_t	count;
@@ -24,19 +26,13 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	round = 0;
 	num = 0;
 	count = 0;
-	if ((s1[count] == '\0' && s2[count] == '\0') || n == 0)
-		return (0);
-	while (s1[count] != '\0' && s2[count] != '\0' && round < n)
+	while (len-- > 0)
 	{
-		if (s1[count] != s2[count])
-			return ((unsigned char) s1[count] - (unsigned char) s2[count]);
-		num += (s1[count] - s2[count]);
-		count++;
-		round++;
+		if (haystack == (char *) needle)
+			return (char *)haystack;
+		haystack++;
 	}
-	if (!(round == n))
-		num += ((unsigned char) s1[count] - (unsigned char) s2[count]);
-	return (num);
+	return ((char *)haystack);
 }
 //int main ()
 //{

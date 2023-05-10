@@ -6,40 +6,46 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 16:17:42 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/10 09:50:25 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/10 11:25:59 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stddef.h>
-
-int fr_memcmp(const void *s1, const void *s2, size_t n)
+#include <stdio.h>
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	char	*a;
 	char	*b;
-	size_t	cou;
+	size_t	count;
 
-	cou = 0;
+	count = 0;
+
+	a = (char *)s1;
+	b = (char *)s2;	
 	while (n-- > 0)
 	{
-		if (s1[cou] != s2[cou]) {
-			return (((unsigned char)s1[cou]) - ((unsigned char) s2[cou]));	
-		}
-		s1++;
-		s2++;
+		if (a[count] != b[count])
+			return ((unsigned char)a[count] - (unsigned char)b[count]);
+			
+		count++;
 	}
 	return (0);
-	
 }
+
+
 
 //
 //int main ()//
 //{  
-//const char  a[] = "abcdef";
-//  const char	b[] = "abc/376xx";
-// size_t c = 5; 
-// printf("mi funcionsadas\nnum= %d",ft_memcmp(a, b, c) );
+//	char s1[10] = "pokemon";
+//
+//	char s2[10]	= "pokemon";
+//
+//
+//	 printf("mi funcionsadas\nnum= %d ",ft_memcmp(s1,s2,5) );
+//
 //}
-//
-//
-//
+
+
+
