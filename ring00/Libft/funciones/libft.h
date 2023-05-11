@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:07:14 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/11 01:54:34 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/11 12:09:56 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ char *ft_strdup(const char *s);
 
 char *ft_substr(char const *s, unsigned int start, size_t len);
 
+char *ft_strjoin(const char *s1, const char *s2);
 
 #endif
