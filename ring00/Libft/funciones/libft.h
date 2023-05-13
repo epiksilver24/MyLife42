@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:07:14 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/12 11:28:49 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/13 15:03:44 by epik             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,6 @@ char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strjoin(const char *s1, const char *s2);
 
 char *ft_strtrim(char const *s1, char const *set);
+
+char *ft_itoa(int num);
 #endif
