@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:06:32 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/10 01:22:38 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/12 11:32:04 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,29 @@
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strlcpy(char *dest, char *src, size_t destsize)
+size_t	ft_strlcpy(const char *dest, const char *src, size_t destsize)
 {
 	size_t	i;
+	char	*d;
+	char	*s;
 
+	d = (char *)dest;
+	s = (char *)src;
 	i = 0;
 	if (destsize == 0)
 		return (ft_strlen(src));
 	destsize -= 1 ;
-	while (src[i] != '\0')
+	while (s[i] != '\0')
 	{
 		if (i >= destsize)
 		{
-			dest[i] = '\0';
+			d[i] = '\0';
 			return (ft_strlen(src));
 		}
-		dest[i] = src[i];
+		d[i] = s[i];
 		i++;
 	}
-	dest[i] = '\0';
+	d[i] = '\0';
 	return (ft_strlen(src));
 }
 //

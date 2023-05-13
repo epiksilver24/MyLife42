@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:07:14 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/11 12:09:56 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/12 11:28:49 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ size_t	ft_strlen(const char *str);
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 
-size_t	ft_strlcpy(char *dest, char *src, size_t destsize);
+size_t	ft_strlcpy(const char *dest,const char *src, size_t destsize);
 
 char	*ft_strchr(const char *str, int charac);
 
@@ -77,4 +77,5 @@ char *ft_substr(char const *s, unsigned int start, size_t len);
 
 char *ft_strjoin(const char *s1, const char *s2);
 
+char *ft_strtrim(char const *s1, char const *set);
 #endif

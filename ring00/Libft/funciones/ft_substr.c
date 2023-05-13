@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 01:55:13 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/11 18:18:00 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/11 23:21:05 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
-//
+
 //int main()
 //{
 //	char a[] = "01234";

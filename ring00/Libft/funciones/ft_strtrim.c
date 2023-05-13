@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 01:15:52 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/12 11:33:57 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/11 23:23:05 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/12 13:14:05 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdlib.h>
+#include <stdio.h>
 
-char	*ft_strdup(const char *s)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	leng;
-	char	*ptr;
+	int	len;
+	int	i;
+	int	j;
 
-	ptr = NULL;
-	leng = ft_strlen(s);
-	ptr = (char *)malloc(leng + 1);
-	if (ptr == NULL)
-		return (NULL);
-	ft_strlcpy(ptr, s, leng + 1);
-	return (ptr);
+	if (!s1)
+		return (0);
+	len = ft_strlen(s1);
+	i = 0;
+	j = len - 1;
+	while (i <= len / 2 && ft_strchr(set, s1[i]) != NULL)
+		i++;
+	while (j >= len / 2 && ft_strchr(set, s1[j]) != NULL)
+		j--;
+	if (i > j)
+		return (ft_strdup(""));
+	len = j - i;
+	return (ft_substr(s1, i, len + 1));
 }
-//
+
 //int main ()
 //{
-//	char s[] = "pokemon";
-//	char *p;
-//	p = ft_strdup(s);	
-//	printf("frase de s %s",s);
+//printf("valoor string %s",ft_strtrim("xvfholaxvf", "xvf"));	
 //}
-//
