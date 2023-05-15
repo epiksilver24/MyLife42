@@ -6,12 +6,14 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:13:28 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/15 12:28:02 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/15 14:23:42 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "stdio.h"
+#include <stddef.h>
+#include <stdlib.h>
 
 
 static size_t numword(const char *s, char sep)
@@ -39,24 +41,47 @@ static size_t numword(const char *s, char sep)
 	}
 	return worlds;
 }
+int	countworld(const char *s, char c)
+{
+	int count;
+
+	count = 0;
+	while (!s && *s != c) {
+		count++;
+	}
+	return (count);
+}
 
 char	**ft_split(char const *s, char c)
 {
 	char **ptr;
 	int	count;
+	int	indi;
 	
 
 	count = 0;
 	ptr = (char **)malloc(sizeof(char *) * (numword(s,c ) + 1));
 	if(!ptr)
 		return NULL;
+	while (count < (numword(s, c)))
+	{
+		indi = 0;
+		while (*s == c && !s)
+			s++;
+		ptr[count] = malloc(sizeof(char) * (countworld(s, c) + 1));
+		while (indi < (countworld(s, c))
+		{
+			
+		}
+		
+	}
 
 
 	return ptr;	
 }
 
 int main ()
-{
+{ 
 	//char a[] = "pokemon digimon  monster rancher   hunter  ";
 	char b[] = "1 2 3 4 5 6 7 8 9 0 ";
 	char **ptr;
