@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:13:28 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/17 17:11:05 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:51:11 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,31 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-static size_t	numword(const char *s, char sep)
+
+static size_t numword(const char *s, char sep)
 {
-	size_t	count;
-	size_t	worlds;
-	int		sispace;
-	char	*str;
+	size_t count;
+	size_t worlds;
+	int sispace;
+	char *str;
 
 	str = (char *) s;
 	sispace = 0;
 	worlds = 0;
 	count = 0;
 	if (!str)
-		return (0);
+		return 0;
 	while (str[count])
 	{
-		if (str[count] != sep)
+		if(str[count] != sep)
 			sispace = 1;
-		if ((str[count + 1] == sep || str[count + 1] == '\0') && sispace == 1)
+		if((str[count + 1] == sep || str[count + 1] == '\0') && sispace == 1)
 		{
 			worlds++;
 			sispace = 0;
-		}
-		count++;
+		}count++;
 	}
-	return (worlds);
+	return worlds;
 }
 //static int	countworld(const char *s, char c)
 //{
@@ -52,43 +52,45 @@ static size_t	numword(const char *s, char sep)
 //	}
 //	return (count);
 //}
-
-static char	**maximumfree(char **str, size_t poss)
+static char **maximumfree(char **str, size_t poss)
 {
 	while (poss-- > 0)
 	{
 		free(str[poss]);
 	}
 	free(str);
-	return (NULL);
+	return NULL;
 }
-
 char	**ft_split(char const *s, char c)
 {
-	char	**ptr;
+	char **ptr;
 	size_t	count;
 	size_t	worlds;
-	char	*news;
+	char *news;
 
 	worlds = numword(s, c);
 	count = 0;
-	ptr = (char **) malloc (sizeof(char *) * (numword(s, c) + 1));
-	if (!ptr)
-		return (NULL);
+	ptr = (char **)malloc(sizeof(char *) * (numword(s,c ) + 1));
+	if(!ptr)
+	{
+		return NULL;
+	}
 	while (count < worlds)
 	{
 		while (*s == c && *s)
 			s++;
 		news = (char *) s;
-		while (*s != c && *s != '\0')
+		while (*s != c && *s != '\0' )
+		{
 			s++;
-		ptr[count] = ft_substr(news, 0, s - news);
+		}
+		ptr[count] = ft_substr(news,0, s - news);
 		if (!ptr)
-			return (maximumfree(ptr, count));
+			return(maximumfree(ptr,count));
 		count++;
 	}
 	ptr[count] = 0;
-	return (ptr);
+	return ptr;	
 }
 /*
 int main ()

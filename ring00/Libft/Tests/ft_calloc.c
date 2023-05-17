@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 21:16:30 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/11 01:08:01 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/17 16:30:47 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <stdio.h>
-void * ft_calloc(size_t nmemb, size_t size)
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void *ptr;
+	void	*ptr;
+
 	ptr = malloc(nmemb * size);
-
-	if (ptr == NULL) {
-		return NULL;
+	if (ptr == NULL)
+	{
+		return (NULL);
 	}
-
-	ft_bzero(ptr, nmemb * size);
+	ft_bzero(ptr, (nmemb * size));
 	return (ptr);
 }
 //int main() {

@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:07:14 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/15 09:14:44 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:54:46 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,6 @@ char *ft_itoa(int num);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char **ft_split(char const *s, char c);
+
+void ft_striteri(char *s, void (*f)(unsigned int, char*));
 #endif

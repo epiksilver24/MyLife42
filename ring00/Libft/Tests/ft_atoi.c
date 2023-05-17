@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 12:28:15 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/08 13:26:04 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/17 15:38:50 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,12 @@ int	ft_atoi(char *str)
 		num *= -1;
 	return (num);
 }
-//
-//int main ()
-//{
-//	char a[] = "	 +546:5";
-//	int c;
-//	c = ft_atoi(a);
-//	printf("%d ; numero es",c);
-//}
+/*
+int main ()
+{
+	char a[] = "	 -012";
+	int c;
+	c = ft_atoi(a);
+	printf("%d ; numero es",c);
+}
+*/
