@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 11:41:59 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/11 18:07:45 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/17 12:02:10 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,36 +19,35 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char	*str;
 	char	*ned;
-	size_t	 count;
+	size_t	c;
 	size_t	position;
 
-	position =0;
-	count = 0;
+	position = 0;
+	c = 0;
 	str = (char *) haystack;
 	ned = (char *) needle;
-	if (ned[count] == '\0')
-		return (char *) haystack;
-	while (str[count] && count < len)
+	if (ned[c] == '\0')
+		return ((char *) haystack);
+	while (str[c] && c < len)
 	{
-		if(str[count] == ned[position] )
+		while (str[c + position] == ned[position] && (c + position) < len)
 		{
-			while (str[count + position] == ned[position] && ned[position] != '\0' && (count + position) < len)
-			{
-				if (ned[position + 1] == '\0')
-					return &str[count];
-				position++;
-			}
+			if (ned[position + 1] == '\0')
+				return (&str[c]);
+			position++;
+		}
 			position = 0;
-		}	
-		count++;
+		c++;
 	}
 	return (NULL);
 }
-//int main ()
-//{
-//  char  a[] = "lorem impsum dolor sit amet";
-//  char	b[] = "impsum";
-//  printf("mi funcionsadas\nnum= %s", ft_strnstr(a,b,15) );
-//
-//
-//}
+/*
+int main ()
+{
+  char  a[] = "lorem impsum dolor sit amet";
+  char	b[] = "hola";
+  printf("mi funcionsadas num= \n%s", ft_strnstr(a,b,15) );
+
+
+}
+*/

@@ -6,47 +6,58 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 01:55:13 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/11 23:21:05 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/17 12:59:36 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char		*substr;
+	char			*substr;
 	unsigned int	i;
-
 	if (!s)
-		return (NULL);
-	i = ft_strlen(s);
-	if (i < start) {
-		substr = malloc(sizeof(char) * 1);
-		if (!substr) {
-			return (NULL); }
-		substr[0] = '\0';
+	{
+		substr = ft_strdup("");
+		if(!substr)
+			return NULL;
 		return (substr);
 	}
-	substr = ft_calloc(len + 1, sizeof(char));
-	if (!substr) return (NULL);
+	// si start empeiza en un ligar superior al tamano de s
+	if (ft_strlen(s) < start)
+	{
+		substr = ft_strdup("");
+		if(!substr)
+			return NULL;
+		return (substr);
+	}
+	// reservamos memoria del puntero del tamano del s 
+	substr = (char *)malloc(sizeof(char) * (ft_strlen(&s[start])));
+	if (!substr)
+		return (NULL);
 	i = 0;
+	// guardamos el s en el substring
 	while (i < len)
 	{
-		substr[i] = s[start + i]; i++;
+		substr[i] = s[start + i];
+		i++;
 	}
+	// ponemos el nulo al final de la frase
 	substr[i] = '\0';
 	return (substr);
 }
+/*
+int main()
+{
+//	char a[] = "0";
+	char *ptr = NULL;
 
-//int main()
-//{
-//	char a[] = "01234";
-//	char *ptr = NULL;
-//
-//	ptr = ft_substr(a, 10, 10);
-//	printf("valor del substr %s",ptr);
-//	
-//}
+	ptr = ft_substr("pokemon digimon", 5,10);
+
+	printf("valor del substr %s",ptr);
+	
+}
+*/

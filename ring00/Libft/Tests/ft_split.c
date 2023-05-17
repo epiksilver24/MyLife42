@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:13:28 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/15 23:48:43 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/17 11:38:10 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,16 @@ static int	countworld(const char *s, char c)
 	}
 	return (count);
 }
-static char  *maximumfree(char **str, size_t poss)
+static void maximumfree(char **str, size_t poss)
 {
-	while (poss-- > 0) {
-		free(str[poss]);
+	int	num;
+
+	num = poss;
+	while (num >= 0) {
+		free(str[num]);
+		num--;
 	}
 	free(str);
-	return NULL;
 }
 char	**ft_split(char const *s, char c)
 {
@@ -71,37 +74,47 @@ char	**ft_split(char const *s, char c)
 	ptr = (char **)malloc(sizeof(char *) * (numword(s,c ) + 1));
 	if(ptr == NULL)
 	{
-		maximumfree(ptr, count);
+		free(ptr);
 		return NULL;
 	}
 	while (count < worlds)
 	{
+		printf("valor count %zu\n",count);
 		while (*s == c && *s)
 			s++;
 		ptr[count] = malloc(sizeof(char) * (countworld(s, c) + 1));
 		if (ptr[count] == NULL)
-			return (char **) maximumfree(ptr, count);
-		if (!(ptr[count] = ft_substr(s, 0, countworld(s, c))))
-			return (char **) maximumfree(ptr, count);
+		{
+			maximumfree(ptr, count);
+			return NULL;
+		}
+		ptr[count] = ft_substr(s, 0, countworld(s, c));
+		if (ptr[count] == NULL)
+		{
+			maximumfree(ptr, count);
+			return NULL;
+		}
 		s += countworld(s, c);
 		count++;	
 	}
 
-	ptr[count] = (char*)'\0';
+	ptr[count] = 0;
 	return ptr;	
 }
 /*
 int main ()
 { 
-	char b[] = "";
-//	char b[] = "1 2 3 4 5 6 7 8 9 0 ";
+//	char b[] = " pokemo nverde rojo negro";
+	char b[] = "1 2 3 4 5 6 7 8 9 0 ";
 	char **ptr;
 	ptr = ft_split(b,' ');
+	int count;
+
+	count = 0;
+	while (ptr[count] ) {
 	
-	while (*ptr) {
-	
-	printf("\nprimer indice\n%s",*ptr);
-	ptr++;
+	printf("\nprimer indice\n|%s|",ptr[count]);
+	count++;
 	}
 }
 */
