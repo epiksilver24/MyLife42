@@ -1,2 +1,9 @@
+
+#	object
 *.o
-*.aout
+
+#	executables
+*.out
+
+#	librerias
+*.a
