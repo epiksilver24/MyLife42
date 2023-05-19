@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:13:28 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/17 17:11:05 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:56:12 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,14 @@ char	**ft_split(char const *s, char c)
 
 	worlds = numword(s, c);
 	count = 0;
-	ptr = (char **) malloc (sizeof(char *) * (numword(s, c) + 1));
+	ptr = malloc (sizeof(char *) * (numword(s, c) + 1));
 	if (!ptr)
 		return (NULL);
 	while (count < worlds)
 	{
 		while (*s == c && *s)
 			s++;
-		news = (char *) s;
+		news = (char *)s;
 		while (*s != c && *s != '\0')
 			s++;
 		ptr[count] = ft_substr(news, 0, s - news);
@@ -87,7 +87,7 @@ char	**ft_split(char const *s, char c)
 			return (maximumfree(ptr, count));
 		count++;
 	}
-	ptr[count] = 0;
+	ptr[count] = NULL;
 	return (ptr);
 }
 /*

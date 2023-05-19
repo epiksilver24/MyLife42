@@ -6,7 +6,7 @@
 #    By: scespede <scespede@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 13:00:41 by scespede          #+#    #+#              #
-#    Updated: 2023/05/17 15:55:02 by scespede         ###   ########.fr        #
+#    Updated: 2023/05/17 17:29:16 by scespede         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,14 +28,11 @@ HEADERS = libft.h
 all: ${NAME}
 
 ${NAME}: ${OBJECTS}
-		 ${LIBRAR} ${NAME} ${OBJECTS}  
+		 ${LIBRAR} ${NAME} ${OBJECTS} ${HEADERS} 
 
 
 %.o : %.c ${libft.h}
 	cc -c ${CFLAGS} $< -o $@
-
-
-
 
 fclean: clean	
 	rm -f ${NAME}
