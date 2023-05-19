@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:07:14 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/17 17:44:55 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/19 14:04:09 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+
+typedef struct	s_list
+{
+	void	*content;
+	struct s_list	*next;
+}	t_list;
 
 int		ft_toupper(int chr);
 
@@ -43,6 +49,8 @@ int		ft_putnbr_fd(int num, int fd);
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
+int		ft_lstsize(t_list *lst);
+
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 size_t	ft_strlen(const char *str);
@@ -65,6 +73,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n);
 
 void	*ft_memchr(const void *s, int c, size_t n);
 
+void	ft_lstadd_back(t_list **lst, t_list *new);
+
 char	*ft_strrchr(const char *str, int charac);
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
@@ -84,5 +94,15 @@ char	*ft_itoa(int num);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char	**ft_split(char const *s, char c);
+
+t_list	*ft_lstnew(void *content);
+
+t_list	*ft_lstlast(t_list *lst);
+
+void	ft_lstadd_front(t_list **lst, t_list *new);
+
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
+
+void	ft_lstclear(t_list **lst, void (*del)(void*));
 
 #endif

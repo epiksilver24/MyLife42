@@ -6,7 +6,7 @@
 #    By: scespede <scespede@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 13:00:41 by scespede          #+#    #+#              #
-#    Updated: 2023/05/17 17:29:16 by scespede         ###   ########.fr        #
+#    Updated: 2023/05/19 14:03:44 by scespede         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,18 +18,26 @@ OBJECTS = ft_strchr.o  ft_toupper.o ft_isalpha.o ft_isdigit.o \
 	ft_putnbr_fd.o ft_putendl_fd.o ft_strncmp.o ft_atoi.o ft_bzero.o \
 	ft_memset.o ft_memcpy.o ft_memmove.o ft_memchr.o ft_memcmp.o \
 	ft_strnstr.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o \
-	ft_strtrim.o ft_itoa.o ft_strmapi.o ft_split.o ft_striteri.o
+	ft_strtrim.o ft_itoa.o ft_strmapi.o ft_split.o ft_striteri.o \
+	
 CFLAGS = -Wall -Werror -Wextra
+
+BONUS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o \
+	ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o  \
 
 LIBRAR = ar rc
 
 HEADERS = libft.h
+
+
 
 all: ${NAME}
 
 ${NAME}: ${OBJECTS}
 		 ${LIBRAR} ${NAME} ${OBJECTS} ${HEADERS} 
 
+bonus: ${BONUS}
+		 ${LIBRAR} ${NAME} ${BONUS} ${HEADERS} 
 
 %.o : %.c ${libft.h}
 	cc -c ${CFLAGS} $< -o $@
