@@ -6,7 +6,7 @@
 #    By: scespede <scespede@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 13:00:41 by scespede          #+#    #+#              #
-#    Updated: 2023/05/19 23:42:09 by scespede         ###   ########.fr        #
+#    Updated: 2023/05/22 10:14:49 by scespede         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 BONUS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o \
 	ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o  \
-	ft_lstiter.o
+	ft_lstiter.o ft_lstmap.o
 
 LIBRAR = ar rc
 
