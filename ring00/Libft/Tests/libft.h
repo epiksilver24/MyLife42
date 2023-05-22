@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 15:07:14 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/19 14:04:09 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/19 23:41:40 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
-	void	*content;
+	void			*content;
 	struct s_list	*next;
 }	t_list;
 
@@ -104,5 +104,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 
 void	ft_lstclear(t_list **lst, void (*del)(void*));
+
+void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 #endif

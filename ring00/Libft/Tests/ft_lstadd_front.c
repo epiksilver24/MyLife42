@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 10:29:19 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/19 12:18:00 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:43:17 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 void ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list *pt1;	
-	pt1 = *lst;
-	pt1->next = new;	
+	if (*lst)
+	{
+		new->next = *lst;
+		*lst = new;
+	}
+	else
+		*lst = new;
+	
 }
 /*
 int main ()

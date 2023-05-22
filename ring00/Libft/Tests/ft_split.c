@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:13:28 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/17 17:56:12 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/21 05:33:11 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,15 @@ static size_t	numword(const char *s, char sep)
 //	return (count);
 //}
 
-static char	**maximumfree(char **str, size_t poss)
+static void *maximumfree(char **str, int count)
 {
-	while (poss-- > 0)
+	int i;
+
+	i = 0;
+	while (i < count)
 	{
-		free(str[poss]);
+		free(str[i]);
+		i++;
 	}
 	free(str);
 	return (NULL);
@@ -83,7 +87,7 @@ char	**ft_split(char const *s, char c)
 		while (*s != c && *s != '\0')
 			s++;
 		ptr[count] = ft_substr(news, 0, s - news);
-		if (!ptr)
+		if (!ptr[count])
 			return (maximumfree(ptr, count));
 		count++;
 	}

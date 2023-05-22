@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 01:55:13 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/17 14:47:52 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/19 20:14:44 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 
 static size_t	sapcemem(char const *s, unsigned int start, size_t len)
 {
-	size_t	num;
-
-	num = 0;
 	if (ft_strlen(&s[start]) > len)
 		return (len);
 	else
