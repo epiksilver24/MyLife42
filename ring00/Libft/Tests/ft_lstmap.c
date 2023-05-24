@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 10:15:02 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/22 12:45:45 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/24 09:12:54 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,17 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list *save;
 	a = NULL;
 
+	void *temp;
+
 	if(lst)
 	{
-		a = ft_lstnew((*f)(lst->content));
+		temp = ((*f)(lst->content);
+		a = ft_lstnew((*f)(temp);
 		if(a == NULL)
+		{
+			(*del)(temp);
 			return NULL;
+		}
 	}
 
 	save = a;	
@@ -50,7 +56,6 @@ int  *savenum(int *s)
 	ptr = s;
 	return (ptr);
 }
-
 static void *plustwo(void *n)
 {
 	n = n + 2;
@@ -81,16 +86,13 @@ int main ()
 
 	while(newc)
 	{
-		int numero;
-
-		numero = (int) newc->content;
-		printf("valor de numero %d\n",numero);
+		int *numero;
+		int *d;
+	numero = newc->content;
+	d = numero;
+		printf("valor de numero %ls\n",(int *)d);
 		newc = newc->next;
 	}
-
-	printf("cantidad de primera lista %d\n",)
-
-
 
 
 }

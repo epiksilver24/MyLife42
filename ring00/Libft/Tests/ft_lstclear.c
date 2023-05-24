@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 14:04:42 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/19 23:36:48 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/22 14:21:31 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *ptr;
+	t_list	*ptr;
+
 	ptr = *lst;
 	if (ptr != NULL)
 	{
-	ft_lstclear(&ptr->next,del);
-	(*del)(ptr->content);
-	free(ptr);
+		ft_lstclear(&ptr->next, del);
+		(*del)(ptr->content);
+		free(ptr);
 	}
 	*lst = NULL;
 }

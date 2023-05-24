@@ -6,28 +6,27 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 12:19:07 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/19 12:32:07 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/22 14:20:35 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int count;
+	int	count;
 
 	count = 0;
-
-	while (lst != NULL) 
+	while (lst != NULL)
 	{
 		lst = lst->next;
 		count++;
 	}
-	return count;
+	return (count);
 }
 /*
 int main ()
-{
+{)
 	char n[]= "pokemon";
 //	char n2[]= "pokemon2";
 //	char n3[]= "pokemon3";
