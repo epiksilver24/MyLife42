@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/09 19:16:18 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/09 19:18:54 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/24 12:56:10 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/24 12:56:13 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 int	ft_isdigit(int a)
 {

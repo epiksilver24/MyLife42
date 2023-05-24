@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 11:11:39 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/14 01:39:57 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/24 12:54:31 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/24 12:54:42 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_isalnum(int a)
 {

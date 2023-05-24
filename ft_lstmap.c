@@ -6,35 +6,43 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 10:15:02 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/24 12:21:22 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/22 12:45:45 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*a;
-	t_list	*head;
-	void	*temp;
+	t_list *a;
+	t_list *save;
+	a = NULL;
 
-	head = NULL;
+	if(lst)
+	{
+		a = ft_lstnew((*f)(lst->content));
+		if(a == NULL)
+			return NULL;
+	}
+
+	save = a;	
 	while (lst)
 	{
-		temp = (*f)(lst->content);
-		a = ft_lstnew(temp);
-		if (!a)
-		{
-			(*del)(temp);
-			ft_lstclear(&head, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&head, a);
 		lst = lst->next;
+		if(lst)
+		{
+			a->next = ft_lstnew((*f)(lst->content));
+			if(!a)
+			{
+				ft_lstclear(&save,del);
+				return NULL;
+			}
+			a = a->next;
+		}
 	}
-	return (head);
+	
+	return (save);
 }
-/*
 int  *savenum(int *s)
 {
 	int *ptr;
@@ -80,8 +88,9 @@ int main ()
 		newc = newc->next;
 	}
 
+	printf("cantidad de primera lista %d\n",)
 
 
 
 
-}*/
+}

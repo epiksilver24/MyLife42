@@ -6,21 +6,21 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 12:33:24 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/19 12:48:03 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/24 12:28:04 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if(lst == NULL)
-		return 0;
+	if (lst == NULL)
+		return (0);
 	while ((lst->next) != NULL )
 	{
 		lst = lst->next;
 	}
-	return lst;
+	return (lst);
 }
 /*
 int main ()

@@ -5,14 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/08 13:26:22 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/08 13:44:21 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/24 12:55:12 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/24 12:55:13 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int	ft_isalpha(int a)
 {

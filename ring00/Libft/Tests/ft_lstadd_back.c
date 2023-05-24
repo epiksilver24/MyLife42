@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 12:44:16 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/22 14:19:09 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/24 12:58:17 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/24 12:58:21 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

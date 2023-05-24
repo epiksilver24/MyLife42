@@ -5,15 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 14:04:42 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/22 14:21:31 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/24 12:59:08 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/24 12:59:12 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {

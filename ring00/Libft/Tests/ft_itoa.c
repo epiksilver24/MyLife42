@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: epik </var/spool/mail/epik>                +#+  +:+       +#+        */
+/*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/13 14:16:10 by epik              #+#    #+#             */
-/*   Updated: 2023/05/13 16:50:09 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/24 12:57:08 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/24 12:57:14 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 static int	lengn(int n)
 {

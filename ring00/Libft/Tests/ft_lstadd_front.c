@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 10:29:19 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/20 14:43:17 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/24 12:58:41 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/24 12:58:44 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (*lst)
 	{
@@ -21,7 +21,6 @@ void ft_lstadd_front(t_list **lst, t_list *new)
 	}
 	else
 		*lst = new;
-	
 }
 /*
 int main ()

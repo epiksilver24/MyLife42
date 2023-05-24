@@ -5,14 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/05 10:24:12 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/08 13:51:18 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/24 12:56:29 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/24 12:56:34 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <ctype.h>
 #include "libft.h"
 
 int	ft_isprint(int a)

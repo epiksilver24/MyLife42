@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/24 12:28:15 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/17 15:38:50 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/24 12:52:14 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/24 12:52:21 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h> 
-#include <stdio.h>
 
 int	ft_atoi(char *str)
 {

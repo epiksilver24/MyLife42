@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 11:07:36 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/09 19:15:58 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/24 12:55:40 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/24 12:55:51 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_isascii(int a)
 

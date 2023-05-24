@@ -6,7 +6,7 @@
 #    By: scespede <scespede@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 13:00:41 by scespede          #+#    #+#              #
-#    Updated: 2023/05/22 10:14:49 by scespede         ###   ########.fr        #
+#    Updated: 2023/05/24 12:49:50 by scespede         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ ${NAME}: ${OBJECTS}
 bonus: ${BONUS}
 		 ${LIBRAR} ${NAME} ${BONUS} ${HEADERS} 
 
-%.o : %.c ${libft.h}
+%.o : %.c ${HEADERS}
 	cc -c ${CFLAGS} $< -o $@
 
 fclean: clean	
@@ -48,10 +48,16 @@ fclean: clean
 
 clean:
 	rm -f ${OBJECTS}
+	rm -f ${BONUS}
 
 re: fclean ${NAME}
 
 .PHONY: all clean fclean re bonus
+
+
+
+
+
 
 
 
