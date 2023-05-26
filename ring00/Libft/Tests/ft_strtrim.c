@@ -6,12 +6,11 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 23:23:05 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/12 13:14:05 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/26 11:48:28 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

@@ -6,11 +6,10 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 10:39:48 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/10 01:16:19 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/26 11:52:13 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_strlen(const char *str)

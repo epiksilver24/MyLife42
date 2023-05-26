@@ -6,13 +6,11 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 11:06:32 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/12 11:32:04 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/26 11:52:41 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 size_t	ft_strlcpy(const char *dest, const char *src, size_t destsize)
 {

@@ -6,14 +6,11 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 01:55:13 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/19 20:14:44 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/26 11:47:31 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 static size_t	sapcemem(char const *s, unsigned int start, size_t len)
 {

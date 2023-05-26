@@ -6,14 +6,11 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 11:43:40 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/17 12:01:19 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/26 11:50:20 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

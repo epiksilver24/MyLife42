@@ -6,14 +6,11 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 09:13:28 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/22 14:22:09 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/26 11:54:28 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdio.h"
-#include <stddef.h>
-#include <stdlib.h>
 
 static size_t	numword(const char *s, char sep)
 {

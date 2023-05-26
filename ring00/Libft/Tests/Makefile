@@ -6,7 +6,7 @@
 #    By: scespede <scespede@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 13:00:41 by scespede          #+#    #+#              #
-#    Updated: 2023/05/26 09:44:06 by scespede         ###   ########.fr        #
+#    Updated: 2023/05/26 11:38:34 by scespede         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,9 @@ OBJECTS = ft_strchr.o  ft_toupper.o ft_isalpha.o ft_isdigit.o \
 	
 CFLAGS = -Wall -Werror -Wextra
 
-BONUS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o \
-	ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o  \
-	ft_lstiter.o ft_lstmap.o
+BONUS = ft_lstnew_bonus.o ft_lstadd_front_bonus.o ft_lstsize_bonus.o ft_lstlast_bonus.o \
+	ft_lstadd_back_bonus.o ft_lstdelone_bonus.o ft_lstclear_bonus.o  \
+	ft_lstiter_bonus.o ft_lstmap_bonus.o
 
 LIBRAR = ar rc
 

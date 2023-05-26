@@ -6,13 +6,11 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 10:54:23 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/10 01:37:31 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/26 11:49:26 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
 
 char	*ft_strrchr(const char *str, int c)
 {

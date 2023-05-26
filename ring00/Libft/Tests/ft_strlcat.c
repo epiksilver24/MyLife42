@@ -6,13 +6,11 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 13:35:29 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/10 11:28:46 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/26 11:53:03 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

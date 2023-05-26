@@ -6,14 +6,11 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 11:49:54 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/11 18:04:48 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/26 11:53:30 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

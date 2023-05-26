@@ -6,12 +6,11 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 12:35:09 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/09 10:47:59 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/26 11:56:49 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stddef.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

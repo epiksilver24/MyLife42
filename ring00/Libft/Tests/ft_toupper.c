@@ -6,13 +6,10 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 10:48:25 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/10 01:29:18 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/26 11:47:27 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
-#include <unistd.h>
 #include "libft.h"
 
 int	ft_toupper(int chr)

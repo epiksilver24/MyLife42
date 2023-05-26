@@ -6,13 +6,10 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 10:33:34 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/10 01:29:41 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/26 11:47:55 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
-#include <unistd.h>
 #include "libft.h"
 
 int	ft_tolower(int chr)
