@@ -6,7 +6,7 @@
 #    By: scespede <scespede@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 13:00:41 by scespede          #+#    #+#              #
-#    Updated: 2023/05/24 12:49:50 by scespede         ###   ########.fr        #
+#    Updated: 2023/05/26 09:44:06 by scespede         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,13 +32,13 @@ HEADERS = libft.h
 
 
 
-all: ${NAME} ${BONUS}
+all: ${NAME} 
 
 ${NAME}: ${OBJECTS}
-		 ${LIBRAR} ${NAME} ${OBJECTS} ${HEADERS} 
+		 ${LIBRAR} ${NAME} ${OBJECTS}
 
-bonus: ${BONUS}
-		 ${LIBRAR} ${NAME} ${BONUS} ${HEADERS} 
+bonus: ${NAME} ${BONUS}
+		 ${LIBRAR} ${NAME} ${BONUS} 
 
 %.o : %.c ${HEADERS}
 	cc -c ${CFLAGS} $< -o $@
