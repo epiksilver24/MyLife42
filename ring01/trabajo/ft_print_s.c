@@ -6,21 +6,34 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 16:41:33 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/31 16:44:07 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/02 13:30:13 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "includes/ft_printf.h"
 
-int ft_print_s(const char *str)
+static int strleng(char *str)
 {
-	int sizestr;
-
-	sizestr = 0;
-	while (*str != '\0')
+	int count;
+	
+	count = 0;
+	while (str[count])
 	{
-		write(1,str,1);	
-		sizestr++;
+		count++;
 	}
-return (sizestr);
+	return (count);
+}
+
+int	ft_print_s(va_list argv, int *i)
+{
+	int check;
+	char *str;
+
+	str = va_arg(argv, char *);
+	check = 0;
+		check = write(1, str, strleng(str));	
+		if (check == -1)
+			return -1;
+		i++;
+	return (check);
 }

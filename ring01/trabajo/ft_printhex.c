@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:12:17 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/31 18:32:59 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/02 12:21:50 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int ft_printhex(int num , char const t)
 	if (num == 0) {
 	return(0);		
 	}
-	hexdecimal(111, t);
+	hexdecimal(num, t);
 	
 	return(sizehex(num));
 
