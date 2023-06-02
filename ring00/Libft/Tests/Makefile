@@ -6,7 +6,7 @@
 #    By: scespede <scespede@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 13:00:41 by scespede          #+#    #+#              #
-#    Updated: 2023/05/26 11:38:34 by scespede         ###   ########.fr        #
+#    Updated: 2023/06/02 11:04:41 by scespede         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,22 +37,26 @@ all: ${NAME}
 ${NAME}: ${OBJECTS}
 		 ${LIBRAR} ${NAME} ${OBJECTS}
 
-bonus: ${NAME} ${BONUS}
-		 ${LIBRAR} ${NAME} ${BONUS} 
+bonus: .bonus 
 
-%.o : %.c ${HEADERS}
-	cc -c ${CFLAGS} $< -o $@
+.bonus: $(BONUS) $(OBJECTS)
+		$(LIBRAR) $(NAME) ${BONUS} $(OBJECTS)
+		@touch .bonus	
+
+%.o : %.c ${HEADERS} Makefile
+		cc -c ${CFLAGS} $< -o $@
 
 fclean: clean	
 	rm -f ${NAME}
+	rm .bonus
 
 clean:
 	rm -f ${OBJECTS}
 	rm -f ${BONUS}
-
+	
 re: fclean ${NAME}
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re bonus 
 
 
 
