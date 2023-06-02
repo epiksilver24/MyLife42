@@ -6,15 +6,13 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:12:17 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/02 12:21:50 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/02 15:29:25 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdio.h>
-#include <unistd.h>
+#include "includes/ft_printf.h"
 
-void hexdecimal(int num, const char f)
+void hexdecimal(int num,  char f)
 {
 	if (num >= 16)
 	{
@@ -58,13 +56,15 @@ int sizehex(int num)
 	return (count);
 }
 
-int ft_printhex(int num , char const t)
+int ft_printhex(va_list argv , char t)
 {
+	int num;
+
+	num = va_arg(argv, int);
 	if (num == 0) {
-	return(0);		
+		return(0);		
 	}
 	hexdecimal(num, t);
-	
 	return(sizehex(num));
 
 //	printf("hola como estamos %x",a);
