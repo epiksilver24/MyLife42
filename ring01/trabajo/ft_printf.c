@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:04:12 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/07 11:17:15 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/07 12:40:07 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static int checkprintf(va_list argv,char const *c1, int *i )
 	char *c = (char *)c1;
 
 	check = 0;
+//	printf("\nc = %c\n",c[*i]);
 	if (c[*i] != '%')
 		check =	write(1,&c[*i],1);	
 	else if (c[*i] == '%' && c[*i + 1] == '%')
@@ -64,9 +65,6 @@ int ft_printf(char const *c, ...)
 
 int main()
 {
-	int a = 23;
-	int *i = &a;
-	printf("valor del puntero de i %p\n",i);
-	ft_printf("pokemon %p azul %d",i,12);
+	ft_printf("%s","p");
 	printf("\n");
 }
