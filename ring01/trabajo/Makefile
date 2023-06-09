@@ -6,7 +6,7 @@
 #    By: scespede <scespede@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 13:00:41 by scespede          #+#    #+#              #
-#    Updated: 2023/06/02 14:13:17 by scespede         ###   ########.fr        #
+#    Updated: 2023/06/09 13:00:54 by scespede         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ PRINTF = ft_printf.h
 
 LIBA = ${LIB}libft.a
 
-OBJECTS = ft_printf.o  ft_printhex.o  ft_print_s.o
+OBJECTS = ft_printf.o  ft_printhex.o  ft_print_s.o ft_print_ptr.o ft_print_c.o
 
 
 CFLAGS = -Wall -Werror -Wextra
@@ -49,6 +49,7 @@ clean:
 	rm -f ${BONUS}
 
 re: fclean ${NAME}
+
 
 .PHONY: all clean fclean re bonus
 

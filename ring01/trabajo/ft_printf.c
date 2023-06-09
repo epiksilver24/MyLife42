@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:04:12 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/07 12:40:07 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/09 13:13:23 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static int checkprintf(va_list argv,char const *c1, int *i )
 	char *c = (char *)c1;
 
 	check = 0;
-//	printf("\nc = %c\n",c[*i]);
 	if (c[*i] != '%')
 		check =	write(1,&c[*i],1);	
 	else if (c[*i] == '%' && c[*i + 1] == '%')
@@ -27,17 +26,12 @@ static int checkprintf(va_list argv,char const *c1, int *i )
 	else if (c[*i] == '%' && c[*i + 1] == 's')
 		check = ft_print_s(argv, i);
 	else if (c[*i] == '%' && (c[*i + 1] == 'x' || c[*i + 1] == 'X'))
-	{
-		check = ft_printhex(argv, c[*i + 1]);
-		i++;
-	}
+		check = ft_printhex(argv, c[*i + 1], i);
 	else if (c[*i] == '%' && (c[*i + 1] == 'p'))
-	{
-		ft_print_ptr(argv);
-		*i = *i + 1;
-	}
+		check = ft_print_ptr(argv, i);
+	else if (c[*i] == '%' && (c[*i + 1] == 'c'))
+		check =	ft_print_c(argv,i);
 	return (check);
-	//
 }
 
 int ft_printf(char const *c, ...)
@@ -46,7 +40,6 @@ int ft_printf(char const *c, ...)
 	va_list	argv;
 	int check;	
 	int total;
-
 	va_start(argv, c);
 	total = 0;	
 	i = 0;
@@ -65,6 +58,9 @@ int ft_printf(char const *c, ...)
 
 int main()
 {
-	ft_printf("%s","p");
+	int a = 45345;
+	char b[] = "hola como estas";
+	char c = 'a';
+	ft_printf("s = %s\nx = %x\nX = %X\nc = %c\n",b ,a, a, c );
 	printf("\n");
 }

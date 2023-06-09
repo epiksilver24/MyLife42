@@ -1,40 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_s.c                                       :+:      :+:    :+:   */
+/*   ft_print_c.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 16:41:33 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 11:07:01 by scespede         ###   ########.fr       */
+/*   Created: 2023/06/09 12:56:08 by scespede          #+#    #+#             */
+/*   Updated: 2023/06/09 13:08:54 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-static int strleng(char *str)
+int ft_print_c(va_list argv, int *i)
 {
-	int count;
-	
-	count = 0;
-	while (str[count])
-	{
-		count++;
-	}
-	return (count);
-}
+	char a;
 
-int	ft_print_s(va_list argv, int *i)
-{
-	int check;
-	char *str;
-
-	str = va_arg(argv, char *);
-	check = 0;
-		check = write(1, str, strleng(str));	
-		if (check == -1)
-			return -1;
-
-		(*i)++;
-	return (check);
+	a = va_arg(argv, int);
+	if(write(1, &a, 1) == -1)
+		return -1;
+	(*i)++;
+	return 1;
 }

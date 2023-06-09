@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:12:17 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/02 15:29:25 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/09 12:13:08 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,17 @@ int sizehex(int num)
 	return (count);
 }
 
-int ft_printhex(va_list argv , char t)
+int ft_printhex(va_list argv , char t, int *i)
 {
-	int num;
-
-	num = va_arg(argv, int);
+	unsigned	 int num;
+	
+	num = va_arg(argv, unsigned int);
+	printf ("valor de num = %d\n",num);
 	if (num == 0) {
 		return(0);		
 	}
 	hexdecimal(num, t);
+	(*i)++;
 	return(sizehex(num));
 
 //	printf("hola como estamos %x",a);
