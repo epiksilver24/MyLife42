@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:04:12 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 13:13:23 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/09 15:47:02 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ static int checkprintf(va_list argv,char const *c1, int *i )
 		check = ft_print_ptr(argv, i);
 	else if (c[*i] == '%' && (c[*i + 1] == 'c'))
 		check =	ft_print_c(argv,i);
+	else if (c[*i] == '%' && (c[*i + 1] == 'u'))
+		check = ft_print_u(argv, i);
+	else if (c[*i] == '%' && (c[*i + 1] == 'd'))
+		check = ft_print_d(argv, i);
 	return (check);
 }
 
@@ -61,6 +65,7 @@ int main()
 	int a = 45345;
 	char b[] = "hola como estas";
 	char c = 'a';
-	ft_printf("s = %s\nx = %x\nX = %X\nc = %c\n",b ,a, a, c );
+	int u = -3243;
+	ft_printf("s = %s\nx = %x\nX = %X\nc = %c\nu = %u\nu = %u",b ,a, a, c,a, u );
 	printf("\n");
 }

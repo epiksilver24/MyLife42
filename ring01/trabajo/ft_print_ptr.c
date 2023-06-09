@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 18:07:11 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 13:13:21 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/09 15:33:50 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 #include <unistd.h>
 #include "includes/ft_printf.h"
 
-static int printhex(char f, )
-{
-
-	return 0;
-}
 
 
 static void hexdecimal(unsigned long long num, char f)
