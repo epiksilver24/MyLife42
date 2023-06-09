@@ -6,11 +6,11 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:04:12 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 15:47:02 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/09 17:06:54 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h" 
+#include "ft_printf.h" 
 #include <stdio.h>
 
 static int checkprintf(va_list argv,char const *c1, int *i )
@@ -59,7 +59,7 @@ int ft_printf(char const *c, ...)
 	va_end(argv);
 	return (total);
 }
-
+/*
 int main()
 {
 	int a = 45345;
@@ -69,3 +69,4 @@ int main()
 	ft_printf("s = %s\nx = %x\nX = %X\nc = %c\nu = %u\nu = %u",b ,a, a, c,a, u );
 	printf("\n");
 }
+*/

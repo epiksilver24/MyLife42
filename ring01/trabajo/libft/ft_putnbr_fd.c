@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_s.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 16:41:33 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 16:54:36 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/07 12:23:37 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/10 09:21:11 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-static int strleng(char *str)
+int	ft_putnbr_fd(int num, int fd)
 {
-	int count;
-	
-	count = 0;
-	while (str[count])
+	if (num == -2147483648)
 	{
-		count++;
+		ft_putstr_fd("-2147483648", fd);
+		return (1);
 	}
-	return (count);
+	if (num < 0)
+	{
+		ft_putchar_fd('-', fd);
+		num = -num;
+	}
+	if (num >= 10)
+	{
+		ft_putnbr_fd(num / 10, fd);
+		ft_putchar_fd(num % 10 + '0', fd);
+	}
+	if (num < 10)
+		ft_putchar_fd(num % 10 + '0', fd);
+	return (1);
 }
 
-int	ft_print_s(va_list argv, int *i)
-{
-	int check;
-	char *str;
-
-	str = va_arg(argv, char *);
-	check = 0;
-		check = write(1, str, strleng(str));	
-		if (check == -1)
-			return -1;
-
-		(*i)++;
-	return (check);
-}
+//int main()
+//{
+//  ft_putnbr_fd(123, 1);
+//}

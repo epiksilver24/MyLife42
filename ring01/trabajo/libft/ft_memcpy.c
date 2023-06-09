@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_s.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 16:41:33 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 16:54:36 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/08 12:35:09 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/26 11:56:49 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-static int strleng(char *str)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int count;
-	
+	size_t		count;
+	char		*d;
+	char		*s;
+
+	d = (char *) dst;
+	s = (char *) src;
 	count = 0;
-	while (str[count])
+	if (!dst && !src)
+		return (dst);
+	while (count < n)
 	{
+		d[count] = s[count];
+		src++;
 		count++;
 	}
-	return (count);
-}
-
-int	ft_print_s(va_list argv, int *i)
-{
-	int check;
-	char *str;
-
-	str = va_arg(argv, char *);
-	check = 0;
-		check = write(1, str, strleng(str));	
-		if (check == -1)
-			return -1;
-
-		(*i)++;
-	return (check);
+	return ((void *)d);
 }

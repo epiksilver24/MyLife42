@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_s.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 16:41:33 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 16:54:36 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/04 10:54:23 by scespede          #+#    #+#             */
+/*   Updated: 2023/06/09 16:41:10 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-static int strleng(char *str)
+char	*ft_strchr(const char *str, int charac)
 {
-	int count;
-	
-	count = 0;
-	while (str[count])
+	while (*str)
 	{
-		count++;
+		if (*str == (char) charac)
+			return ((char *)str);
+		str++;
 	}
-	return (count);
+	if (*str == (char) charac)
+		return ((char *) str);
+	return (0);
 }
-
-int	ft_print_s(va_list argv, int *i)
-{
-	int check;
-	char *str;
-
-	str = va_arg(argv, char *);
-	check = 0;
-		check = write(1, str, strleng(str));	
-		if (check == -1)
-			return -1;
-
-		(*i)++;
-	return (check);
-}
+//
+//int main ()
+//{
+//	char a[] = "pokemon";
+//
+//	
+//	printf("valor de a %s",ft_strchr(a,107));
+//}

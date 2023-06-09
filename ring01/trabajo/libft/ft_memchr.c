@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_s.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 16:41:33 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 16:54:36 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/09 11:53:15 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/10 01:32:29 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-static int strleng(char *str)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int count;
-	
-	count = 0;
-	while (str[count])
+	char	*srt;
+
+	srt = (char *) s;
+	while (n-- > 0)
 	{
-		count++;
+		if (*srt == (char) c)
+			return (srt);
+		srt++;
 	}
-	return (count);
-}
-
-int	ft_print_s(va_list argv, int *i)
-{
-	int check;
-	char *str;
-
-	str = va_arg(argv, char *);
-	check = 0;
-		check = write(1, str, strleng(str));	
-		if (check == -1)
-			return -1;
-
-		(*i)++;
-	return (check);
+	return (NULL);
 }

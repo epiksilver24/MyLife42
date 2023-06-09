@@ -1,40 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_s.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 16:41:33 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 16:54:36 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/04 10:48:25 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/26 11:47:27 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-static int strleng(char *str)
+int	ft_toupper(int chr)
 {
-	int count;
-	
-	count = 0;
-	while (str[count])
+	if (chr >= 'a' && chr <= 'z')
 	{
-		count++;
+		chr -= 32;
 	}
-	return (count);
+	return (chr);
 }
-
-int	ft_print_s(va_list argv, int *i)
-{
-	int check;
-	char *str;
-
-	str = va_arg(argv, char *);
-	check = 0;
-		check = write(1, str, strleng(str));	
-		if (check == -1)
-			return -1;
-
-		(*i)++;
-	return (check);
-}
+//
+//int main ()
+//{
+//char c ;
+//int i;
+//	i = 'a';
+//    while (i <= 'z')
+//    {
+//        c = ft_toupper(i);
+//        write(1, &c, 1);
+//        i++;
+//    }
+//	printf("\npatron original\n");
+//
+//char u ;
+//int t;
+//t = 'a';
+//while (t <= 'z')
+//{
+//	u = toupper(t);
+//	write(1,&u,1);
+//	t++;
+//}
+//
+//}

@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 12:57:08 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 15:12:51 by scespede         ###   ########.fr       */
+/*   Updated: 2023/05/24 12:57:14 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 		copyn = n;
 	str = malloc((sizeof(char)) * (count + 1));
 	if (!str)
-		return (-1);
+		return (NULL);
 	str[count--] = '\0';
 	while (copyn > 0)
 	{
@@ -58,6 +58,7 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 	return (str);
 }
+/*
 int main ()
 {
   char *str;
@@ -65,3 +66,4 @@ int main ()
   str =ft_itoa(-214483648);
   printf("valor de los numero %s",str);
 }
+*/

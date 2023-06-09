@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_s.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 16:41:33 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 16:54:36 by scespede         ###   ########.fr       */
+/*   Created: 2023/05/09 16:17:42 by scespede          #+#    #+#             */
+/*   Updated: 2023/05/26 11:50:00 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-static int strleng(char *str)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int count;
-	
+	char	*a;
+	char	*b;
+	size_t	count;
+
 	count = 0;
-	while (str[count])
+	a = (char *)s1;
+	b = (char *)s2;
+	while (n-- > 0)
 	{
+		if (a[count] != b[count])
+			return ((unsigned char)a[count] - (unsigned char)b[count]);
 		count++;
 	}
-	return (count);
+	return (0);
 }
-
-int	ft_print_s(va_list argv, int *i)
-{
-	int check;
-	char *str;
-
-	str = va_arg(argv, char *);
-	check = 0;
-		check = write(1, str, strleng(str));	
-		if (check == -1)
-			return -1;
-
-		(*i)++;
-	return (check);
-}
+//
+//int main ()//
+//{  
+//	char s1[10] = "pokemon";
+//
+//	char s2[10]	= "pokemon";
+//
+//
+//	 printf("mi funcionsadas\nnum= %d ",ft_memcmp(s1,s2,5) );
+//
+//}
