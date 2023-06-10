@@ -6,35 +6,31 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 16:41:33 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 16:54:36 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/10 19:22:49 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static int strleng(char *str)
-{
-	int count;
-	
-	count = 0;
-	while (str[count])
-	{
-		count++;
-	}
-	return (count);
-}
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include "includes/libft.h"
 
 int	ft_print_s(va_list argv, int *i)
 {
-	int check;
-	char *str;
-
-	str = va_arg(argv, char *);
-	check = 0;
-		check = write(1, str, strleng(str));	
-		if (check == -1)
-			return -1;
-
+	char *s;
+	int len;
+	s = va_arg(argv, char *);
+	if (!s)
+	{
+		if (write (1, "(null)", 6) == -1)
+			return (-1);
 		(*i)++;
-	return (check);
+		return (6);
+	}
+	len = ft_strlen(s);
+	if (write(1, s, len) == -1)
+		return (-1);
+	(*i)++;
+	return (len);
 }

@@ -1,23 +1,48 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/05 18:07:11 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 16:36:25 by scespede         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
 #include "ft_printf.h"
 
+int numcharacter(unsigned long long num)
+{
+	int count;
+	
+	count = 0;
+
+	if (num == 0)
+	{
+		return (0);	
+	}
+
+	while (num != 0)
+	{
+		num = num / 16;
+		count++;
+	}
+	return (count);
+}
 
 
-static void hexdecimal(unsigned long long num, char f)
+static int charprint(char f, int num)
+{
+	char hexChar;
+
+        if (f == 'x')
+            {
+                hexChar = (num - 10) + 'a';
+               if( write(1, &hexChar, 1) == -1)
+		       return (-1);
+            }
+            if (f == 'X')
+            {
+                hexChar = (num - 10) + 'A';
+                if(write(1, &hexChar, 1) == -1)
+		return (-1);
+            }
+	    return (1);
+}
+
+static int hexdecimal(unsigned long long num, char f)
 {
     if (num >= 16)
     {
@@ -35,34 +60,35 @@ static void hexdecimal(unsigned long long num, char f)
         }
         else
         {
-            if (f == 'x')
-            {
-                hexChar = (num - 10) + 'a';
-                write(1, &hexChar, 1);
-            }
-            if (f == 'X')
-            {
-                hexChar = (num - 10) + 'A';
-                write(1, &hexChar, 1);
-            }
+		
+   if( charprint(f, num) == -1)
+	  return (-1);
         }
     }
+    return (1);
 }
 
 int ft_print_ptr(va_list argv, int *i)
 {
     unsigned long long address = va_arg(argv, unsigned long long); // Dirección de memoria del puntero
+	int	a;
 
-   // write(1, "La dirección de memoria del puntero es: ", 38);
+
    if (address == 0) {
-   	write(1, "0x0", 3);
+   if(	write(1, "(nil)", 5) == -1)
+	   return (-1);
    }
    else 
    {
-	   write(1, "0x", 2);
-	   hexdecimal(address, 'x');
+	  if( write(1, "0x", 2) == -1)
+		  return (-1);
+	 if ( hexdecimal(address, 'x') == -1)
+		 return (-1);
    }
 	(*i)++;
-    return 0;
+	a = numcharacter(address);
+	if (address == 0) {
+		return (5);	
+	}
+    return (a + 2);
 }
-
