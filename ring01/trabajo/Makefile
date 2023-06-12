@@ -6,7 +6,7 @@
 #    By: scespede <scespede@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 13:00:41 by scespede          #+#    #+#              #
-#    Updated: 2023/06/09 17:01:43 by scespede         ###   ########.fr        #
+#    Updated: 2023/06/12 09:32:59 by scespede         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,8 @@ LIBRAR = ar rcs
 HEADERS = libft.h
 
 all: ${NAME} 
+
+#problemas relink necesita una dependencia si cambian el libft.a
 
 ${NAME}: ${OBJECTS}
 	make -C ${LIBA}
