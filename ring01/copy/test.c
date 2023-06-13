@@ -13,5 +13,4 @@ int main()
 	printf("imprimir int\n");
 	valuep = ft_printf("%d",d);
 	ft_printf("\nvalor de print anterior = %d\n", valuep);
-
 }

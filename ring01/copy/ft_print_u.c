@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 15:19:17 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/12 14:30:58 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/12 16:05:28 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "includes/libft.h"
-
-
 
 static int	ft_icount(unsigned int n)
 {
@@ -54,23 +52,21 @@ static char	*ft_uitoa(unsigned int n)
 	return (arr);
 }
 
-int ft_print_u(unsigned int cha, int *i )
+int	ft_print_u(unsigned int cha, int *i )
 {
-	int leng;
-	char *str;
+	int		leng;
+	char	*str;
+
 	str = ft_uitoa(cha);
 	if (str == NULL)
+		return (-1);
+	if (ft_printf("%s", str) == -1)
 	{
+		free(str);
 		return (-1);
 	}
-	if (ft_printf("%s",str) == -1) {
-		free(str);
-		return (-1);	
-	}
-		free(str);
-
+	free(str);
 	(*i)++;
-
 	leng = ft_icount(cha);
-	return leng;
+	return (leng);
 }

@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 16:41:33 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/12 14:30:41 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/12 15:54:00 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 
 int	ft_print_s(char *s, int *i)
 {
-	int len;
+	int	len;
+
 	if (!s)
 	{
 		if (write (1, "(null)", 6) == -1)
@@ -29,7 +30,7 @@ int	ft_print_s(char *s, int *i)
 	len = ft_strlen(s);
 	while (*s)
 	{
-		if(write(1,s,1) == -1)
+		if (write(1, s, 1) == -1)
 			return (-1);
 		s++;
 	}
