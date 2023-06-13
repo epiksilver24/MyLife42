@@ -6,16 +6,17 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 12:56:08 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/12 14:22:50 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/13 11:32:10 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "includes/libft.h"
 
-int ft_print_c(int a, int *i)
+int	ft_print_c(int a, int *i)
 {
 	if (write(1, &a, 1) == -1)
-		return -1;
+		return (-1);
 	(*i)++;
-	return 1;
+	return (1);
 }

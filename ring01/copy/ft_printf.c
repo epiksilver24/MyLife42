@@ -6,18 +6,19 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:04:12 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/12 15:42:27 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/13 11:36:06 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h" 
 #include <stdio.h>
 
-static int checkprintf(va_list argv,char const *c1, int *i )
+static int	checkprintf(va_list argv,	char const *c1, int *i)
 {
-	int check;
-	char *c = (char *)c1;
+	int	check;
+	char *c;
 
+	c = (char *)c1;
 	check = 0;
 	if (c[*i] != '%')
 		check =	write(1, &c[*i],1);	
@@ -53,10 +54,11 @@ int ft_printf(char const *c, ...)
 {
 	int	i;
 	va_list	argv;
-	int check;	
-	int total;
+	int	check;
+	int	total;
+
 	va_start(argv, c);
-	total = 0;	
+	total = 0;
 	i = 0;
 	check = 0;
 	while (c[i] && check != -1)
