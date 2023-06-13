@@ -56,7 +56,8 @@ static int hexdecimal(unsigned long long num, char f)
         if (num <= 9)
         {
             hexChar = num + '0';
-            write(1, &hexChar, 1);
+            if (write(1, &hexChar, 1) == -1)
+				return (-1);
         }
         else
         {
@@ -74,9 +75,12 @@ int ft_print_ptr(va_list argv, int *i)
 	int	a;
 
 
-   if (address == 0) {
-   if(	write(1, "(nil)", 5) == -1)
-	   return (-1);
+   if (address == 0)
+   {
+	   if(	write(1, "0x0", 3) == -1)
+		   return (-1);
+	   (*i)++;
+	   return (3);
    }
    else 
    {

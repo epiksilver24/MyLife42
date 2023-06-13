@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 02:16:38 by scespede          #+#    #+#             */
-/*   Updated: 2023/05/26 11:55:11 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/12 12:32:28 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	ft_putchar_fd(int c, int fd)
 {
 	if (ft_isascii(c))
 	{
-		write(fd, &c, 1);
+		if (write(fd, &c, 1) == -1)
+			return (-1);
 		return (1);
 	}
 	return (0);

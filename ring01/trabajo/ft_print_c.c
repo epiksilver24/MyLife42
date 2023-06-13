@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 12:56:08 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/09 16:36:04 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/12 14:16:00 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int ft_print_c(va_list argv, int *i)
 	char a;
 
 	a = va_arg(argv, int);
-	if(write(1, &a, 1) == -1)
+	if (write(1, &a, 1) == -1)
 		return -1;
 	(*i)++;
 	return 1;

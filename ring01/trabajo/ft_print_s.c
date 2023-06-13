@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 16:41:33 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/10 19:22:49 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/12 12:26:58 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,12 @@ int	ft_print_s(va_list argv, int *i)
 		return (6);
 	}
 	len = ft_strlen(s);
-	if (write(1, s, len) == -1)
-		return (-1);
+	while (*s)
+	{
+		if(write(1,s,1) == -1)
+			return (-1);
+		s++;
+	}
 	(*i)++;
 	return (len);
 }

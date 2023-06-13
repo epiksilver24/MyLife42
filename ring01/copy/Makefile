@@ -6,7 +6,7 @@
 #    By: scespede <scespede@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/04 13:00:41 by scespede          #+#    #+#              #
-#    Updated: 2023/06/12 09:32:59 by scespede         ###   ########.fr        #
+#    Updated: 2023/06/13 15:28:27 by scespede         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,25 +21,33 @@ PRINTF = ft_printf.h
 LIBA = libft
 
 OBJECTS = ft_printf.o  ft_printhex.o  ft_print_s.o ft_print_ptr.o ft_print_c.o ft_print_u.o ft_print_d.o
+DEPS = $(OBJECTS:.o=.d)
 
-
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -MMD
 
 LIBRAR = ar rcs
 
-HEADERS = libft.h
+HEADERS = includes/libft.h
 
-all: ${NAME} 
+LIBTARGET	= libft/libft.a
+
+LIBS_DIR := $(dir $(LIBTARGET))
+
+all: ${NAME}
+#callforlib
 
 #problemas relink necesita una dependencia si cambian el libft.a
 
-${NAME}: ${OBJECTS}
-	make -C ${LIBA}
-	cp ${LIBA}/libft.a .
-	mv libft.a ${NAME}
+
+${NAME}:  ${OBJECTS}
+	make -C ${LIB}
+	cp ${LIBTARGET} ${NAME}
 	${LIBRAR} ${NAME} ${OBJECTS}
 
-%.o : %.c 
+
+#${LIBRAR} ${NAME} ${OBJECTS}
+
+%.o : %.c ${PRINTF} ${HEADERS} 
 	cc -c ${CFLAGS} $< -o $@
 
 fclean: clean	
@@ -51,6 +59,15 @@ clean:
 	rm -f ${OBJECTS}
 
 re: fclean ${NAME}
+
+${LIBTARGET}:
+	make -C ${LIB}
+	
+
+callforlib :
+	make -C ${LIB}
+	make -C . ${NAME}
+	
 
 
 .PHONY: all clean fclean re bonus

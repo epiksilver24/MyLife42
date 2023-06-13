@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 15:19:17 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/10 17:10:35 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/12 13:47:16 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,11 @@ int ft_print_u(va_list argv, int *i )
 		return (-1);
 	}
 	if (ft_printf("%s",str) == -1) {
+		free(str);
 		return (-1);	
 	}
-	free(str);
+		free(str);
+
 	(*i)++;
 
 	leng = ft_icount(cha);

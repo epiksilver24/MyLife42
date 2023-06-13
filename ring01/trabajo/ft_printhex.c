@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:12:17 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/10 19:13:52 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/12 14:15:52 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ int hexdecimal(unsigned int num,  char f)
 			if (f == 'x')
 			{
 				num = (num - 10 + 'a');
-			if(	write(1, &num,1) == -1)
+			if(	ft_printf("%c",num) == -1)
 				return (-1);	
 			}
 			if (f == 'X')
 			{
 				num = (num - 10 + 'A');
-			if(	write(1, &num,1) == -1)
+			if(	ft_printf("%c",num) == -1)
 				return (-1);	
 			}
 		}

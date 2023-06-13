@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:04:12 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/10 19:48:55 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/12 14:16:01 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,32 +62,29 @@ int ft_printf(char const *c, ...)
 	va_end(argv);
 	return (total);
 }
-/*
-int main()
+/*int main()
 {
-	int a = 1;
+	int a = -10;
 //	char a[] = "hola %% pokwmon %%%";
 //	int u = 3243;
 //	ft_printf("s = %s\nx = %x\nX = %X\nc = %c\nu = %u\nu = %u",b ,a, a, c,a, u );
-	printf("my funcion\n");
-	ft_printf("value %%%d",a);
+//	printf("my funcion\n");
+//	ft_printf("value %d",a);
 //	printf("hexadecimal = ||);
-	printf("\nsu funcion\n");
-	printf("value %%%d",a);
+//	printf("\nsu funcion\n");
+//	printf("value %d",a);
 	int my;
 	int pt;
-	printf("\n");
-	my = ft_printf("%%%d",a);
+//	printf("\n");
+	my = ft_printf("%x",a);
 
 	printf("\n");
-	pt = printf("%%%d",a);
+	pt = printf("%x",a);
 
-	printf("\n");
+//	printf("\n");
 
 	printf("valor de my = %d",my);
 
-	printf("\n");
+//	printf("\n");
 	printf("valor de pt = %d",pt);
-}
-
-*/
+}*/
