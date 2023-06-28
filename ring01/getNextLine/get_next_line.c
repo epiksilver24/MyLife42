@@ -11,30 +11,41 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-
-
-
+#include <unistd.h>
+#include <fcntl.h>
 
 char *get_next_line(int fd)
 {
 	char *buff;
 	int char_num;
 	static char *str;
+	str = NULL;
 	
 	if( fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buff = malloc((sizeof(char)) * BUFFER_SIZE + 1);
+	buff = malloc((sizeof(char)) * (BUFFER_SIZE + 1));
 	char_num = 1;
 	while (!(ft_strchr(buff, '\n') && char_num != 0))
 	{
 		char_num = read(fd, buff, BUFFER_SIZE);
 		if(char_num < 0)
 		{
-			free(BUFF);
+			free(buff);
 			return NULL;
 		}
-		buff[char_num] = '\0';
+		//buff[char_num] = '\0';
 		str = ft_strjoin(str, buff);
 	}
+
+
+	return (str);
+}
+
+int main()
+{
+	int fd;
+
+	fd = open("hola.txt",O_RDONLY);
+	printf("%s\n",get_next_line(fd));
+	return (0);
 }

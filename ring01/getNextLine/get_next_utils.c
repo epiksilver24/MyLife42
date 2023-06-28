@@ -25,6 +25,7 @@ char *ft_strchr(const char *str, int c)
 		{
 			return(&s[i]);
 		}
+		i++;
 	}
 	return (NULL);
 }
@@ -34,9 +35,12 @@ int ft_strlen(char *str)
 	int	c;
 	
 	c = 0;
+	if(str)
+	{
 	while (str[c])
 	{
 		c++;
+	}
 	}
 	return (c);
 }
@@ -54,6 +58,11 @@ char *ft_strjoin(char *s1, char  *s2)
 	str = malloc((sizeof(char) * leng));
 	if(!str)
 		return (NULL);
+	if(!s1)
+	{
+		s1 = malloc(sizeof(char) * 1);
+		s1[0] = '\0';
+	}
 	while (s1[i])
 	{
 		str[i] = s1[i];
