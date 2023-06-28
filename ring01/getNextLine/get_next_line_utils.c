@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:23:35 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/26 18:40:10 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:04:31 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char *ft_strchr(const char *str, int c)
 
 	s = (char *) str;
 	i = 0;
+	if(s)
+	{
 	while (s[i])
 	{
 		if(s[i] == (char)c)
@@ -26,6 +28,7 @@ char *ft_strchr(const char *str, int c)
 			return(&s[i]);
 		}
 		i++;
+	}
 	}
 	return (NULL);
 }
@@ -61,6 +64,8 @@ char *ft_strjoin(char *s1, char  *s2)
 	if(!s1)
 	{
 		s1 = malloc(sizeof(char) * 1);
+		if(!s1)
+			return (NULL);
 		s1[0] = '\0';
 	}
 	while (s1[i])
@@ -79,6 +84,8 @@ char *ft_strjoin(char *s1, char  *s2)
 
 
 }
+
+
 /*
 int main()
 
