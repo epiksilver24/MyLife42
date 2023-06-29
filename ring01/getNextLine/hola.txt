@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 pkemon
 azul
+=======
+poke
+perse
+pokemon
+>>>>>>> 9c1d22abc59d3dc297525e328986713acdc7fcf9

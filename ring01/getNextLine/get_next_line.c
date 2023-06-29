@@ -23,6 +23,8 @@ static char *cutstr(char *str)
 	b = 0;
 	while ((str[i] && str[i] != '\n'))
 		i++;
+	if(str[i] == '\n')
+		i++;
 	s = malloc((sizeof(char) * (i + 1)));
 	if (!s)
 		return (NULL);
@@ -61,6 +63,7 @@ char *newstr(char *str)
 	}
 	news[b] = '\0';
 	free(str);
+	str = NULL;
 	return (news);
 	
 }
@@ -69,8 +72,9 @@ char *get_next_line(int fd)
 {
 	char *buff;
 	int char_num;
-	static char *str;
+	static char *str = NULL; 
 	char *s;
+	//printf("valor buffersize = %d\n",BUFFER_SIZE);
 	
 	if( fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
@@ -79,38 +83,67 @@ char *get_next_line(int fd)
 		return NULL;
 	
 	char_num = 1;
-	while (!(ft_strchr(str, '\n')) && char_num != 0)
+		
+	while (!str || ( buff &&  !(ft_strchr(str, '\n')) && char_num > 0 ))
 	{
+		
 		char_num = read(fd, buff, BUFFER_SIZE);
+<<<<<<< HEAD
 		if(char_num <= 0)
+=======
+		if(char_num < 1)
+>>>>>>> 9c1d22abc59d3dc297525e328986713acdc7fcf9
 		{
 			free(buff);
 			return NULL;
 		}
+<<<<<<< HEAD
+=======
+		buff[char_num] = '\0';
+>>>>>>> 9c1d22abc59d3dc297525e328986713acdc7fcf9
 		str = ft_strjoin(str, buff);
 
 	}
-	
+	free(buff);	
+	buff = NULL;
 	s = cutstr(str);
 	if(!s)
 	{
+<<<<<<< HEAD
 
 	}
 	str = newstr(buff);
+=======
+		free(str);
+		str = NULL;
+		return NULL;
+	}
+	str = newstr(str);
+	if (!str)
+	{
+		free(str);
+		str = NULL;
+		return NULL;
+	}
+>>>>>>> 9c1d22abc59d3dc297525e328986713acdc7fcf9
 	return (s);
 }
 /*
 int main()
 {
 	int fd;
-
-	fd = open("hola.txt",O_RDONLY);
+	char *str;
 	int a = 0;
 
-	while (a < 10)
+	fd = open("hola.txt",O_RDONLY);
+	while (a < 5)
 	{
+<<<<<<< HEAD
 		char *s = get_next_line(fd);
 		printf("%s", s);
+=======
+		printf("%s\n", get_next_line(fd));
+>>>>>>> 9c1d22abc59d3dc297525e328986713acdc7fcf9
 		a++;
 	}
 	close(fd);
