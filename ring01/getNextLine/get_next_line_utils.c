@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:23:35 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/29 13:49:53 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/29 13:52:40 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,23 +55,16 @@ char *ft_strjoin(char *str, char  *buff)
 	int	i;
 	int itwo;
 
-<<<<<<< HEAD
 	s = NULL;
 	itwo = 0;
 	i = 0;
 	if(!str)
-=======
-	i = 0;
-	itwo = 0;
-	if(!s1)
->>>>>>> 9c1d22abc59d3dc297525e328986713acdc7fcf9
 	{
 		str = malloc(sizeof(char) * 1);
 		if(!str)
 			return (NULL);
 		str[0] = '\0';
 	}
-<<<<<<< HEAD
 	if(!str || !buff)
 		return NULL;
 	leng = ft_strlen(str)  + ft_strlen( buff) + 1;
@@ -80,17 +73,6 @@ char *ft_strjoin(char *str, char  *buff)
 		return (NULL);
 
 	while (str[i])
-=======
-	leng = ft_strlen(s1)  + ft_strlen(s2) + 1;
-	str = malloc((sizeof(char) * leng));
-	if(!str)
-	{
-		free(s1);
-		s1 = NULL;
-		return (NULL);
-	}
-	while (s1[i])
->>>>>>> 9c1d22abc59d3dc297525e328986713acdc7fcf9
 	{
 		s[i] = str[i];
 		i++;
