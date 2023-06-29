@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:23:35 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/28 14:04:31 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/29 13:49:53 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,39 +48,43 @@ int ft_strlen(char *str)
 	return (c);
 }
 
-char *ft_strjoin(char *s1, char  *s2)
+char *ft_strjoin(char *str, char  *buff)
 {
-	char *str;
+	char *s;
 	size_t	leng;
 	int	i;
 	int itwo;
 
+	s = NULL;
 	itwo = 0;
 	i = 0;
-	leng = ft_strlen(s1)  + ft_strlen( s2) + 1;
-	str = malloc((sizeof(char) * leng));
+	if(!str)
+	{
+		str = malloc(sizeof(char) * 1);
+		if(!str)
+			return (NULL);
+		str[0] = '\0';
+	}
+	if(!str || !buff)
+		return NULL;
+	leng = ft_strlen(str)  + ft_strlen( buff) + 1;
+	s = malloc((sizeof(char) * leng));
 	if(!str)
 		return (NULL);
-	if(!s1)
+
+	while (str[i])
 	{
-		s1 = malloc(sizeof(char) * 1);
-		if(!s1)
-			return (NULL);
-		s1[0] = '\0';
-	}
-	while (s1[i])
-	{
-		str[i] = s1[i];
+		s[i] = str[i];
 		i++;
 	}
-	while (s2[itwo])
+	while (buff[itwo])
 	{
-		str[i + itwo] = s2[itwo];
+		s[i + itwo] = buff[itwo];
 		itwo++;
 	}
-	str[i + itwo] = '\0';
-	free(s1);
-	return (str);
+	s[i + itwo] = '\0';
+	free(str);
+	return (s);
 
 
 }

@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 12:45:35 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/28 14:05:33 by scespede         ###   ########.fr       */
+/*   Updated: 2023/06/29 13:49:46 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char *cutstr(char *str)
 	s = malloc((sizeof(char) * (i + 1)));
 	if (!s)
 		return (NULL);
-	while (b < i)
+	while (b <= i)
 	{
 		s[b] = str[b];
 		 b++;
@@ -47,12 +47,10 @@ char *newstr(char *str)
 	s = 0;
 	while (str[i] && str[i] != '\n')
 		i++;
-	while(str[i] && str[i] == '\n')
+	if(str[i] == '\n')
 		i++;
 	while(str[i + s] && str[i + s] != '\n')
-	{
 		s++;
-	}
 	news = malloc((sizeof(char) * (s + 1)));
 	if(!news)
 		return (NULL);
@@ -76,32 +74,32 @@ char *get_next_line(int fd)
 	
 	if( fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buff = NULL;
 	buff = malloc((sizeof(char)) * (BUFFER_SIZE + 1));
 	if(!buff)
 		return NULL;
-	buff[BUFFER_SIZE] = '\0';
+	
 	char_num = 1;
 	while (!(ft_strchr(str, '\n')) && char_num != 0)
 	{
 		char_num = read(fd, buff, BUFFER_SIZE);
-		if(char_num == 0)
-		{
-			return "";
-		}
-		if(char_num < 0)
+		if(char_num <= 0)
 		{
 			free(buff);
 			return NULL;
 		}
-		//buff[char_num] = '\0';
 		str = ft_strjoin(str, buff);
+
 	}
 	
 	s = cutstr(str);
+	if(!s)
+	{
+
+	}
 	str = newstr(buff);
 	return (s);
 }
+/*
 int main()
 {
 	int fd;
@@ -111,9 +109,11 @@ int main()
 
 	while (a < 10)
 	{
-		printf("%s\n",get_next_line(fd));
+		char *s = get_next_line(fd);
+		printf("%s", s);
 		a++;
 	}
 	close(fd);
 	return (0);
 }
+*/
