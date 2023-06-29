@@ -30,7 +30,6 @@ ${NAME}: ${OBJECTS}
 
 fclean: clean	
 	rm -f ${NAME}
-	rm -f .bonus
 
 clean:
 	rm -f ${OBJECTS}

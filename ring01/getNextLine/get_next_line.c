@@ -23,6 +23,8 @@ static char *cutstr(char *str)
 	b = 0;
 	while ((str[i] && str[i] != '\n'))
 		i++;
+	if(str[i] == '\n')
+		i++;
 	s = malloc((sizeof(char) * (i + 1)));
 	if (!s)
 		return (NULL);
@@ -63,6 +65,7 @@ char *newstr(char *str)
 	}
 	news[b] = '\0';
 	free(str);
+	str = NULL;
 	return (news);
 	
 }
@@ -71,49 +74,62 @@ char *get_next_line(int fd)
 {
 	char *buff;
 	int char_num;
-	static char *str;
+	static char *str = NULL; 
 	char *s;
+	//printf("valor buffersize = %d\n",BUFFER_SIZE);
 	
 	if( fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	buff = NULL;
 	buff = malloc((sizeof(char)) * (BUFFER_SIZE + 1));
 	if(!buff)
 		return NULL;
 	buff[BUFFER_SIZE] = '\0';
 	char_num = 1;
-	while (!(ft_strchr(str, '\n')) && char_num != 0)
+		
+	while (!str || ( buff &&  !(ft_strchr(str, '\n')) && char_num > 0 ))
 	{
+		
 		char_num = read(fd, buff, BUFFER_SIZE);
-		if(char_num == 0)
-		{
-			return "";
-		}
-		if(char_num < 0)
+		if(char_num < 1)
 		{
 			free(buff);
 			return NULL;
 		}
-		//buff[char_num] = '\0';
+		buff[char_num] = '\0';
 		str = ft_strjoin(str, buff);
 	}
-	
+	free(buff);	
+	buff = NULL;
 	s = cutstr(str);
-	str = newstr(buff);
+	if(!s)
+	{
+		free(str);
+		str = NULL;
+		return NULL;
+	}
+	str = newstr(str);
+	if (!str)
+	{
+		free(str);
+		str = NULL;
+		return NULL;
+	}
 	return (s);
 }
+/*
 int main()
 {
 	int fd;
-
-	fd = open("hola.txt",O_RDONLY);
+	char *str;
 	int a = 0;
 
-	while (a < 10)
+	fd = open("hola.txt",O_RDONLY);
+	while (a < 5)
 	{
-		printf("%s\n",get_next_line(fd));
+		printf("%s\n", get_next_line(fd));
 		a++;
 	}
 	close(fd);
 	return (0);
 }
+*/
