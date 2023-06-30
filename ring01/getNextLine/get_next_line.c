@@ -89,11 +89,11 @@ char *get_next_line(int fd)
 		}
 		str = ft_strjoin(str, buff);
 	}
-	free(buff);	
 	s = cutstr(str);
 	str = newstr(buff);
 	return (s);
 }
+/*
 int main()
 {
 	int fd;
@@ -110,3 +110,4 @@ int main()
 	close(fd);
 	return (0);
 }
+*/
