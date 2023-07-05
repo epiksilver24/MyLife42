@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 18:48:30 by scespede          #+#    #+#             */
-/*   Updated: 2023/07/02 19:02:09 by scespede         ###   ########.fr       */
+/*   Updated: 2023/07/05 16:39:32 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char *ft_strjoin(char *s1, char *s2)
 	{
 		s1 = malloc(1);
 		if(!s1)
-			return 0;
+			return NULL;
 		s1[0] = '\0';
 	}
 	if(!s1 )
@@ -84,6 +84,8 @@ char	*ft_strchr( char *str, int charac)
 	int i;
 
 	i = 0;
+	if(!str)
+		return (0);
 	while (str[i])
 	{
 		if (str[i] ==  charac)

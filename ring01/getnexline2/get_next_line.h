@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 17:39:05 by scespede          #+#    #+#             */
-/*   Updated: 2023/07/02 17:47:13 by scespede         ###   ########.fr       */
+/*   Updated: 2023/07/05 16:08:06 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ int ft_strlen(char *s);
 char *ft_strjoin(char *s1, char *s2);
 char *ft_join(char *s1, char *s2);
 char *ft_strchr(char *str, int cha);
+char *ft_get_line(char *str);
 
 #endif
