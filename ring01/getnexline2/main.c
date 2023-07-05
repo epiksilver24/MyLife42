@@ -25,11 +25,11 @@ int main()
 	char *line;
 
 	i = 0;
-	fd = open("hola.txt", O_RDONLY);
-	while (i < 10)
+	fd = open("hola2", O_RDONLY);
+	while (i < 40)
 	{
 		line = get_next_line(fd);
-		printf("return value %d: %s\n", i, line);
+		printf("return value %d: |%s|\n", i, line);
 		free(line);
 		i++;
 	}

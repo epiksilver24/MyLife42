@@ -23,12 +23,10 @@
 #endif
 
 char *get_next_line(int fd);
-char *ft_read_file(int fd, char *stc);
-char *ft_strchr( char *str, int c);
-int ft_strlen(char *str);
-char *ft_strjoin(char *str, char  *buff);
-char *ft_join(char *s,char *str, char  *buff);
-
-
+char *red_line(int fd, char *str);
+int ft_strlen(char *s);
+char *ft_strjoin(char *s1, char *s2);
+char *ft_join(char *s1, char *s2);
+char *ft_strchr(char *str, int cha);
 
 #endif

@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "get_next_line.h"
 
 int ft_strlen(char *s)
 {
@@ -31,9 +32,11 @@ char *ft_strjoin(char *s1, char *s2)
 	if(!s1)
 	{
 		s1 = malloc(1);
+		if(!s1)
+			return 0;
 		s1[0] = '\0';
 	}
-	if(!s1 || !s2)
+	if(!s1 )
 		return (NULL);
 	res = ft_join(s1,s2);
 	if(!res)
@@ -42,7 +45,7 @@ char *ft_strjoin(char *s1, char *s2)
 	return (res);
 }
 
-char ft_join( char *s1, char *s2)
+char *ft_join( char *s1, char *s2)
 {
 	int i;
 	int j;
@@ -66,4 +69,28 @@ char ft_join( char *s1, char *s2)
 	}
 	res[i +j] = '\0';
 	return (res);
+}
+
+
+
+
+
+
+
+
+
+char	*ft_strchr( char *str, int charac)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] ==  charac)
+			return (str);
+		i++;
+	}
+	if (str[i] == charac)
+		return ( str);
+	return (0);
 }
