@@ -8,8 +8,8 @@ char *newstr(char *start)
 	int		j;
 
 	i = 0;
-//	if(!start)
-//		return(NULL);
+	if(!start)
+		return(NULL);
 	while (start[i] && start[i] != '\n')
 		i++;
 //	if(!start[i])
@@ -37,66 +37,6 @@ char *newstr(char *start)
 }
 
 
-char	*ft_next(char *buffer)
-{
-	int		i;
-	int		j;
-	char	*line;
-
-	i = 0;
-	// find len of first line
-	while (buffer[i] && buffer[i] != '\n')
-		i++;
-	// if eol == \0 return NULL
-	if (!buffer[i])
-	{
-		free(buffer);
-		return (NULL);
-	}
-	// len of file - len of firstline + 1
-	line =malloc(ft_strlen(buffer) - 1 + 1);
-	i++;
-	j = 0;
-	// line == buffer
-	while (buffer[i])
-		line[j++] = buffer[i++];
-	free(buffer);
-	return (line);
-}
-
-
-char *cutstr(char *str)
-{
-	int i;
-	char *ptr;
-
-	i = 0;
-	if(!str)
-		return NULL;
-	
-	while(str[i] && str[i] != '\n')
-		i++;
-	if(str[i] == '\n')
-		i++;
-	ptr = malloc(i + 1);
-	if(!ptr)
-		return (NULL);
-	i = 0;
-	while(str[i] && str[i] != '\n')
-	{
-		ptr[i] = str[i];
-		i++;
-	}
-	if (str[i] == '\n')
-	{
-		ptr[i++] = '\n';
-	}
-		ptr[i] = '\0';
-	return (ptr);
-
-}
-
-
 char	*ft_get_line(char *left_str)
 {
 	int		i;
@@ -107,10 +47,12 @@ char	*ft_get_line(char *left_str)
 		return (NULL);
 	while (left_str[i] && left_str[i] != '\n')
 		i++;
+	printf("get_line 1");
 	str = (char *)malloc(sizeof(char) * (i + 2));
 	if (!str)
 		return (NULL);
 	i = 0;
+	printf("malloc get_line 2");
 	while (left_str[i] && left_str[i] != '\n')
 	{
 		str[i] = left_str[i];
@@ -132,15 +74,15 @@ char *red_line(int fd, char *str)
 	char *buff;
 	int bytes;
 
+	printf("red_line 1");
 	buff = malloc((sizeof(char)) * (BUFFER_SIZE + 1));
 	if(!buff)
 		return (NULL);
+	printf("red_line 2");
 	buff[0] = '\0';
 	bytes = 1;
-	while (bytes != 0)
+	while (bytes > 0)
 	{
-		if(ft_strchr(str , '\n'))
-			break;
 		bytes = read(fd, buff, BUFFER_SIZE);
 		if(bytes == 0)
 			break;
@@ -156,6 +98,8 @@ char *red_line(int fd, char *str)
 			free(buff);
 			return (NULL);
 		}
+		if(ft_strchr(str , '\n'))
+			break;
 	}
 	free(buff);
 	return (str);
@@ -184,10 +128,11 @@ char *get_next_line(int fd)
 	if (!str || !line)
 //	if ( !line)
 	{
-		free(str);
+		if(str)
+			free(str);
 		if(line)
 			free(line);
-		return (line);
+		return (NULL);
 	}
 	return(line);
 

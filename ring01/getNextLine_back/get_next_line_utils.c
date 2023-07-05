@@ -6,31 +6,28 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 17:23:35 by scespede          #+#    #+#             */
-/*   Updated: 2023/07/02 15:49:23 by scespede         ###   ########.fr       */
+/*   Updated: 2023/07/02 17:15:32 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char *ft_strchr( char *s, int c)
+char *ft_strchr( char *str, int c)
 {
 	int i;
 
 	i = 0;
-	if(!s)
+	if(!str)
 		return (NULL);
-	if (c == 0)
+	while (str[i])
 	{
-		i = ft_strlen((char *)s);
-		return (&s[i]);
-	}
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == (char) c)
-			return (&s[i]);
+		if(str[i] == (char)c)
+			return(&str[i]);
 		i++;
 	}
+	if (c == '\0')
+		return (&str[i]);
+	
 	return (NULL);
 }
 
@@ -42,17 +39,20 @@ int ft_strlen(char *str)
 	if(!str)
 		return (0);
 	while (str[c])
+	{
 		c++;
+	}
+	
 	return (c);
 }
-
+/*
 char *ft_strjoin(char *str, char  *buff)
 {
 	char *surt;
 
 	if(!str)
 	{
-		str = malloc(sizeof(char) * 1);
+		str = malloc(1);
 		str[0] = '\0';
 	}
 	if(!str || !buff)
@@ -84,23 +84,56 @@ char *ft_join(char *dest, char *s1, char *s2)
 		dest[i + j] = s2[j];
 		j++;
 	}
-	dest[i +j] = '\0';
+		dest[i +j] = '\0';
 	return (dest);
 
 }
-
-void	*ft_calloc(size_t nmemb, size_t size)
+*/
+char	*ft_strjoin(char *s1, char *s2)
 {
-	void	*ptr;
+	size_t	i;
+	size_t	c;
+	char	*str;
 
-	ptr = malloc(nmemb * size);
-	if (ptr == NULL)
+	if (!s1)
 	{
-		return (NULL);
+		s1 = malloc(1 * sizeof(char));
+		if (!s1)
+			return (NULL);
+		s1[0] = '\0';
 	}
-	ft_bzero(ptr, (nmemb * size));
-	return (ptr);
+	str = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (str == NULL)
+		return (free_storage(s1));
+	i = -1;
+	c = 0;
+	if (s1)
+		while (s1[++i] != '\0')
+			str[i] = s1[i];
+	while (s2[c] != '\0')
+		str[i++] = s2[c++];
+	str[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	free(s1);
+	return (str);
 }
+char	*ft_free(char *buffer, char *buf)
+{
+	char	*temp;
+
+	temp = ft_strjoin(buffer, buf);
+	free(buffer);
+	return (temp);
+}
+
+
+char	*free_storage(char *storage)
+{
+	free(storage);
+	storage = NULL;
+	return (NULL);
+}
+
+
 /*
 int main()
 
@@ -115,3 +148,4 @@ int main()
 	printf("valor = %s", ft_strjoin(a,b));
 }
 */
+

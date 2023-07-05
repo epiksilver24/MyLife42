@@ -1,41 +1,60 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: scespede <scespede@student.42barcel>       +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/04 13:00:41 by scespede          #+#    #+#              #
-#    Updated: 2023/06/28 14:00:37 by scespede         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+#  |  |  ___ \    \  |         |
+#  |  |     ) |  |\/ |   _  |  |  /   _ 
+# ___ __|  __/   |   |  (   |    <    __/ 
+#    _|  _____| _|  _| \__,_| _|\_\ \___|
+#                              by jcluzet
+################################################################################
+#                                     CONFIG                                   #
+################################################################################
 
-NAME = get_next_line.a
+NAME        := get
+CC        := gcc
+FLAGS    := -Wall -Wextra -Werror 
+################################################################################
+#                                 PROGRAM'S SRCS                               #
+################################################################################
 
-OBJECTS = get_next_line.o get_next_line_utils.o	
-CFLAGS = -Wall -Werror -Wextra
+SRCS        :=      get_next_line.c \
+                          get_next_line_utils.c \
+                          main.c \
+                          
+OBJS        := $(SRCS:.c=.o)
 
-LIBRAR = ar rc
+.c.o:
+	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
-HEADERS = get_next_line.h
-
-all: ${NAME} 
-
-${NAME}: ${OBJECTS}
-		 ${LIBRAR} ${NAME} ${OBJECTS}
+################################################################################
+#                                  Makefile  objs                              #
+################################################################################
 
 
-%.o : %.c ${HEADERS} Makefile
-		cc -c ${CFLAGS} $< -o $@
+CLR_RMV		:= \033[0m
+RED		    := \033[1;31m
+GREEN		:= \033[1;32m
+YELLOW		:= \033[1;33m
+BLUE		:= \033[1;34m
+CYAN 		:= \033[1;36m
+RM		    := rm -f
 
-fclean: clean	
-	rm -f ${NAME}
+${NAME}:	${OBJS}
+			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
+			${CC} ${FLAGS} -o ${NAME} ${OBJS}
+			@echo "$(GREEN)$(NAME) created[0m ✔️"
+
+all:		${NAME}
+
+bonus:		all
 
 clean:
-	rm -f ${OBJECTS}
-	rm -f ${BONUS}
-	
-re: fclean ${NAME}
+			@ ${RM} *.o */*.o */*/*.o
+			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️"
 
-.PHONY: all clean fclean re bonus 
+fclean:		clean
+			@ ${RM} ${NAME}
+			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
+
+re:			fclean all
+
+.PHONY:		all clean fclean re
+
 

@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 15:04:12 by scespede          #+#    #+#             */
-/*   Updated: 2023/06/13 13:11:33 by scespede         ###   ########.fr       */
+/*   Updated: 2023/07/01 16:01:35 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ int	ft_printf(char const *c, ...)
 	va_end(argv);
 	return (total);
 }
-/*
+
 int main()
 {
-	int a = -10;
+	int a =  12345 ;
 //	char a[] = "hola %% pokwmon %%%";
 //	int u = 3243;
 //	ft_printf("s = %s\nx = %x\nX = %X\nc = %c\nu = %u\nu = %u",b ,a, a, c,a, u );
@@ -90,4 +90,4 @@ int main()
 
 //	printf("\n");
 	printf("valor de pt = %d",pt);
-}*/
+}

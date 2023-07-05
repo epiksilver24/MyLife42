@@ -6,7 +6,7 @@
 /*   By: scespede <scespede@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 12:45:35 by scespede          #+#    #+#             */
-/*   Updated: 2023/07/02 15:54:14 by scespede         ###   ########.fr       */
+/*   Updated: 2023/07/02 17:25:23 by scespede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,37 @@
 #include <fcntl.h>
 
 
-char	*ft_free(char *buffer, char *buf)
+char *red_file(int fd, char *res)
 {
-	char	*temp;
+	char *buff;
+	int int_bytes;
 
-	temp = ft_strjoin(buffer, buf);
-	free(buffer);
-	return (temp);
+	if(!res)
+	{
+		res = malloc((sizeof(char)) * 1);
+		res[0] = '\0';
+	}
+	buff = malloc((sizeof(char) * (BUFFER_SIZE + 1)));
+	if(!buff)
+		return (NULL);
+	int_bytes = 1;
+	while (int_bytes > 0)
+	{
+		int_bytes = read(fd,buff,BUFFER_SIZE);
+		if(int_bytes == -1)
+		{
+			free(buff);
+			return NULL;
+		}
+		buff[int_bytes] = 0;
+		res = ft_free(res,buff);
+		if(ft_strchr(buff,'\n'))
+			break;
+	}
+	free(buff);
+	return(res);
 }
+
 
 static char *cutstr(char *str)
 {
@@ -80,48 +103,23 @@ char *newstr(char *start)
 	return (new_buff);
 }
 
-char *read_file(int fd, char *res)
-{
-char	*buffer;
-	int		byte_read;
-
-	// malloc if res dont exist
-	if (!res)
-		res = ft_calloc(1, 1);
-	// malloc buffer
-	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-	byte_read = 1;
-	while (byte_read > 0)
-	{
-		// while not eof read
-		byte_read = read(fd, buffer, BUFFER_SIZE);
-		if (byte_read == -1)
-		{
-			free(buffer);
-			return (NULL);
-		}
-		// 0 to end for leak
-		buffer[byte_read] = 0;
-		// join and free
-		res = ft_free(res, buffer);
-		// quit if \n find
-		if (ft_strchr(buffer, '\n'))
-			break ;
-	}
-	free(buffer);
-	return (res);
-}
-
 char *get_next_line(int fd)
 {
-	static char *str; 
+	static char *str = NULL; 
+	char *line;
 	
 	if( fd < 0 || BUFFER_SIZE <= 0)
+	{
+		if(str)
+			free(str);
 		return (NULL);
-	free(buff);
-	buff = cutstr(str);
+	}
+	str = red_file(fd, str);
+	if(!str)
+		return NULL;
+	line = cutstr(str);
 	str = newstr(str);
-	return (buff);
+	return (line);
 }
 /*
 int main()
