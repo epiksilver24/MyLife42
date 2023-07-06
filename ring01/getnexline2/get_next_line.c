@@ -81,7 +81,7 @@ char *red_line(int fd, char *str)
 	printf("red_line 2");
 	buff[0] = '\0';
 	bytes = 1;
-	while (bytes > 0)
+	while (bytes > 0 )
 	{
 		bytes = read(fd, buff, BUFFER_SIZE);
 		if(bytes == 0)
@@ -98,6 +98,8 @@ char *red_line(int fd, char *str)
 			free(buff);
 			return (NULL);
 		}
+		free(buff);
+#include "get_next_line.h"
 		if(ft_strchr(str , '\n'))
 			break;
 	}
