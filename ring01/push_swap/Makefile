@@ -15,12 +15,12 @@ NAME = ft_push_swap.a
 
 LIB = libft/
 
-PRINTF = ft_push_swap.h
+PRINTF = ft_push_swap.h 
 
 
 LIBA = libft
 
-OBJECTS = push_swap.o
+OBJECTS = push_swap.o push_swap_utils.o
 
 DEPS = $(OBJECTS:.o=.d)
 

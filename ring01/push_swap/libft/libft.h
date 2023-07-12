@@ -25,7 +25,7 @@ typedef struct s_list
 
 int		ft_toupper(int chr);
 
-int		ft_isalnum(int a);
+int		ft_isalnum(int *a);
 
 int		ft_isalpha(int a);
 

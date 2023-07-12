@@ -17,7 +17,20 @@
 
 #include "libft/libft.h"
 
+typedef struct s_ilist
+{
+	int num;
+	int indi;
+	struct s_ilist *next;
+
+}	t_ilist;
+
 
 int parseargv(char **tab);
+int *ft_atoi2(char *str , int *num);
+t_ilist *ft_lsitnew(int content);
+void ft_lsitadd_back(t_ilist **lst, t_ilist *new);
+int ft_lsitsize(t_ilist *lis);
+void ft_addindi(t_ilist **lst, int size);
 
 #endif
